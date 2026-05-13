@@ -13,16 +13,19 @@
 </head>
 <body>
 <header class="site-header">
-  <div class="header-identity">
+  <a href="index.html" class="header-identity-link"><div class="header-identity">
     <div class="circles-oo">
       <div class="circle-ji">JI</div>
       <div class="circle-photo"><img src="assets/janine-photo.jpg" alt="Janine Isaacs"></div>
     </div>
     <h1 class="site-name">Janine Isaacs</h1>
     <p class="site-tagline">Helping women see the power they're still burying</p>
-  </div>
+  </div></a>
   <div class="header-divider"></div>
-  <nav class="site-nav">
+  <button class="hamburger" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="site-nav" id="site-nav">
   <a href="index.html">Home</a>
   <a href="philosophy.html">The Philosophy</a>
   <a href="this-is-for-you.html">This Is For You</a>
