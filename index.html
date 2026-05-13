@@ -10,8 +10,9 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="stylesheet" href="style.css">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
+  // Redirect invite/recovery tokens to /admin so the widget can handle them
   if (window.location.hash && (
     window.location.hash.includes('invite_token') ||
     window.location.hash.includes('recovery_token') ||
@@ -39,7 +40,6 @@
   <a href="the-woman-behind-the-work.html">The Woman Behind The Work</a>
   <a href="work-with-me.html">Work With Me</a>
   <a href="testimonials.html">Testimonials</a>
-  <a href="reflections.html">Reflections</a>
   <a href="contact.html">Contact</a>
 </nav>
 </header>
@@ -71,7 +71,7 @@
     <p class="gcf-sub">No pressure, just an open door.</p>
     <div class="gcf-buttons">
       <a href="https://wa.me/447747897113" class="gcf-btn gcf-btn-primary" target="_blank" rel="noopener">Message me on WhatsApp</a>
-  <a href="contact.html" class="gcf-btn gcf-btn-secondary">Send a message</a>
+      <a href="contact.html" class="gcf-btn gcf-btn-secondary">Send a message</a>
       <a href="https://linkedin.com/in/janineisaacs" class="gcf-btn gcf-btn-ghost" target="_blank" rel="noopener">Connect on LinkedIn</a>
     </div>
     <p class="gcf-newsletter">Monthly newsletter coming soon — drop your email and you'll be the first to know.</p>
