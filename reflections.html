@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reflections — Janine Isaacs</title>
+<meta name="description" content="Janine Isaacs — Life Coach helping women reclaim the space they've given away.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="header-identity">
+    <div class="circles-oo">
+      <div class="circle-ji">JI</div>
+      <div class="circle-photo"><img src="assets/janine-photo.jpg" alt="Janine Isaacs"></div>
+    </div>
+    <h1 class="site-name">Janine Isaacs</h1>
+    <p class="site-tagline">Helping women see the power they're still burying</p>
+  </div>
+  <div class="header-divider"></div>
+  <nav class="site-nav">
+  <a href="index.html">Home</a>
+  <a href="philosophy.html">The Philosophy</a>
+  <a href="this-is-for-you.html">This Is For You</a>
+  <a href="the-woman-behind-the-work.html">The Woman Behind The Work</a>
+  <a href="work-with-me.html">Work With Me</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="reflections.html" class="active">Reflections</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+<main class="page-content">
+
+<div class="testimonials-header section-cream">
+  <h2>Reflections</h2>
+  <p>Words for the quiet moments.</p>
+</div>
+
+<div class="section section-cream" id="posts-list">
+  <div class="section-inner">
+    <p style="color:var(--text-muted);text-align:center;">Loading…</p>
+  </div>
+</div>
+
+<!-- Single post view (hidden by default) -->
+<div id="post-view" style="display:none;">
+  <div class="section section-cream">
+    <div class="section-inner">
+      <p style="margin-bottom:28px;">
+        <button onclick="showList()" class="btn-text" style="min-height:auto;line-height:1.4;padding-bottom:3px;">&larr; All reflections</button>
+      </p>
+      <p class="section-label" id="post-date"></p>
+      <h2 id="post-title" style="margin-bottom:24px;"></h2>
+      <div id="post-body" style="color:var(--text-mid);"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// List of post filenames — update when adding new posts
+const POST_FILES = [
+  'data/posts/2026-03-01-the-space-between.json',
+  'data/posts/2026-02-01-carrying-things-quietly.json'
+];
+
+function formatDate(str) {
+  const d = new Date(str + 'T12:00:00');
+  return d.toLocaleDateString('en-GB', {month:'long', year:'numeric'});
+}
+
+function showList() {
+  document.getElementById('post-view').style.display = 'none';
+  document.getElementById('posts-list').style.display = '';
+}
+
+function showPost(post) {
+  document.getElementById('posts-list').style.display = 'none';
+  document.getElementById('post-date').textContent = formatDate(post.date);
+  document.getElementById('post-title').textContent = post.title;
+  const body = post.body.split('\n\n').map(p =>
+    `<p style="color:var(--text-mid);margin-bottom:1.1rem;">${p.replace(/\n/g,'<br>')}</p>`
+  ).join('');
+  document.getElementById('post-body').innerHTML = body;
+  document.getElementById('post-view').style.display = '';
+  window.scrollTo({top: 0, behavior:'smooth'});
+}
+
+Promise.all(POST_FILES.map(f => fetch(f).then(r => r.json()).catch(() => null)))
+  .then(posts => {
+    const valid = posts.filter(Boolean).sort((a,b) => b.date.localeCompare(a.date));
+    const container = document.getElementById('posts-list');
+    if (!valid.length) {
+      container.innerHTML = '<div class="section-inner"><p style="color:var(--text-muted);text-align:center;">No reflections yet.</p></div>';
+      return;
+    }
+    let html = '<div class="section-inner">';
+    valid.forEach((post, i) => {
+      html += `
+        <div class="reflection-card" onclick='showPost(${JSON.stringify(post).replace(/'/g,"\u0027")})'>
+          <p class="post-date">${formatDate(post.date)}</p>
+          <div class="post-divider"></div>
+          <h3 class="post-title">${post.title}</h3>
+          <p class="post-excerpt">${post.excerpt}</p>
+          <span class="btn-text" style="min-height:auto;line-height:1.4;">Read more &rarr;</span>
+        </div>
+        ${i < valid.length-1 ? '<div style="height:1px;background:rgba(201,169,110,0.15);margin:32px 0;"></div>' : ''}`;
+    });
+    html += '</div>';
+    container.innerHTML = html;
+  });
+</script>
+</main>
+<div class="global-contact-footer">
+  <div class="gcf-inner">
+    <p class="gcf-heading">Let's talk</p>
+    <p class="gcf-sub">No pressure, just an open door.</p>
+    <div class="gcf-buttons">
+      <a href="https://wa.me/447747897113" class="gcf-btn gcf-btn-primary" target="_blank" rel="noopener">Message me on WhatsApp</a>
+      <a href="contact.html" class="gcf-btn gcf-btn-secondary">Send a message</a>
+      <a href="https://linkedin.com/in/janineisaacs" class="gcf-btn gcf-btn-ghost" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    </div>
+    <p class="gcf-newsletter">Monthly newsletter coming soon — drop your email and you'll be the first to know.</p>
+  </div>
+</div>
+<div class="copyright-bar"><p>Janine Isaacs &nbsp;|&nbsp; &copy; 2026 All rights reserved.</p></div>
+</body>
+</html>

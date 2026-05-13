@@ -1,0 +1,69 @@
+backend:
+  name: git-gateway
+  branch: main
+  # When DNS moves to janineisaacs.com, remove the site_url line below
+  # and Netlify will detect the URL automatically
+  site_url: https://janineisaacsdraft.netlify.app
+
+site_url: https://janineisaacsdraft.netlify.app
+display_url: https://janineisaacsdraft.netlify.app
+
+media_folder: assets
+public_folder: /assets
+
+collections:
+  # ── TESTIMONIALS ──────────────────────────────────────────
+  - name: testimonials
+    label: Testimonials
+    files:
+      - name: all_testimonials
+        label: All Testimonials
+        file: data/testimonials.json
+        fields:
+          - name: testimonials
+            label: Testimonials
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name,    label: "Client name (first name only)",  widget: string }
+              - { name: preview, label: "Short pull-quote (2–3 sentences shown by default)", widget: text }
+              - { name: text,    label: "Full testimonial",                widget: text }
+              - { name: date,    label: "Date (optional, e.g. January 2025)", widget: string, required: false }
+
+  # ── BLOG / REFLECTIONS ────────────────────────────────────
+  - name: posts
+    label: "Reflections (Blog)"
+    folder: data/posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { name: title,   label: Title,   widget: string }
+      - { name: date,    label: Date,    widget: datetime, format: "YYYY-MM-DD", date_format: "DD MMMM YYYY", time_format: false }
+      - { name: excerpt, label: "Short excerpt (shown in listing)", widget: text }
+      - { name: body,    label: "Full post", widget: text, hint: "Plain text. Use a blank line between paragraphs." }
+
+  # ── PAGE COPY (key editable lines) ───────────────────────
+  - name: settings
+    label: "Page copy"
+    files:
+      - name: homepage
+        label: "Home page"
+        file: data/homepage.json
+        fields:
+          - { name: headline,    label: "Main headline",  widget: string }
+          - { name: subheadline, label: "Subheadline",    widget: text }
+      - name: work_with_me
+        label: "Work With Me — pricing"
+        file: data/pricing.json
+        fields:
+          - name: packages
+            label: Packages
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name,     label: "Package name",  widget: string }
+              - { name: price,    label: "Price (e.g. £150)", widget: string }
+              - { name: sessions, label: "Session info",  widget: string }
+              - { name: desc,     label: "Description",   widget: text }
+              - { name: ideal,    label: "Ideal for (italic line)", widget: string }

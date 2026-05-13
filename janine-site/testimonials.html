@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials — Janine Isaacs</title>
+<meta name="description" content="Janine Isaacs — Life Coach helping women reclaim the space they've given away.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="header-identity">
+    <div class="circles-oo">
+      <div class="circle-ji">JI</div>
+      <div class="circle-photo"><img src="assets/janine-photo.jpg" alt="Janine Isaacs"></div>
+    </div>
+    <h1 class="site-name">Janine Isaacs</h1>
+    <p class="site-tagline">Helping women see the power they're still burying</p>
+  </div>
+  <div class="header-divider"></div>
+  <nav class="site-nav">
+  <a href="index.html">Home</a>
+  <a href="philosophy.html">The Philosophy</a>
+  <a href="this-is-for-you.html">This Is For You</a>
+  <a href="the-woman-behind-the-work.html">The Woman Behind The Work</a>
+  <a href="work-with-me.html">Work With Me</a>
+  <a href="testimonials.html" class="active">Testimonials</a>
+  <a href="reflections.html">Reflections</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+<main class="page-content">
+
+<div class="testimonials-header section-cream">
+  <h2>What clients say</h2>
+  <p>In their own words.</p>
+</div>
+<div class="section section-cream" style="padding-top:24px;" id="testimonials-list">
+  <div class="section-inner">
+    <p style="color:var(--text-muted);text-align:center;">Loading testimonials…</p>
+  </div>
+</div>
+<script>
+fetch('data/testimonials.json')
+  .then(r => r.json())
+  .then(data => {
+    const container = document.getElementById('testimonials-list');
+    let html = '<div class="section-inner">';
+    data.forEach((t, i) => {
+      const paragraphs = t.text.split('\n\n').map(p => `<p>${p.replace(/\n/g,'<br>')}</p>`).join('');
+      const dateLine = t.date ? ` <span style="font-size:.8em;opacity:.7">${t.date}</span>` : '';
+      html += `
+        <div class="testimonial-name-label">${t.name}</div>
+        <div class="testimonial-full-card" id="tc-${i}">
+          <span class="quote-mark">&ldquo;</span>
+          <div class="preview-text"><p>${t.preview}</p></div>
+          <div class="full-text">${paragraphs}<p class="t-name">— ${t.name}${dateLine}</p></div>
+          <button class="read-more-btn" onclick="toggleT(this)">Read more</button>
+        </div>
+        ${i < data.length-1 ? '<div style="padding:28px 0;"><div class="gold-rule"></div></div>' : ''}`;
+    });
+    html += '</div>';
+    container.innerHTML = html;
+  })
+  .catch(() => {
+    document.getElementById('testimonials-list').innerHTML =
+      '<div class="section-inner"><p style="color:var(--text-muted);text-align:center;">Unable to load testimonials.</p></div>';
+  });
+
+function toggleT(btn) {
+  var card = btn.closest('.testimonial-full-card');
+  var exp = card.classList.toggle('expanded');
+  btn.textContent = exp ? 'Read less' : 'Read more';
+}
+</script>
+</main>
+<div class="global-contact-footer">
+  <div class="gcf-inner">
+    <p class="gcf-heading">Let's talk</p>
+    <p class="gcf-sub">No pressure, just an open door.</p>
+    <div class="gcf-buttons">
+      <a href="https://wa.me/447747897113" class="gcf-btn gcf-btn-primary" target="_blank" rel="noopener">Message me on WhatsApp</a>
+      <a href="contact.html" class="gcf-btn gcf-btn-secondary">Send a message</a>
+      <a href="https://linkedin.com/in/janineisaacs" class="gcf-btn gcf-btn-ghost" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    </div>
+    <p class="gcf-newsletter">Monthly newsletter coming soon — drop your email and you'll be the first to know.</p>
+  </div>
+</div>
+<div class="copyright-bar"><p>Janine Isaacs &nbsp;|&nbsp; &copy; 2026 All rights reserved.</p></div>
+</body>
+</html>

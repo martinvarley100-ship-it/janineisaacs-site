@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Janine Isaacs</title>
+<meta name="description" content="Janine Isaacs — Life Coach helping women reclaim the space they've given away.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-identity">
+    <div class="circles-oo">
+      <div class="circle-ji">JI</div>
+      <div class="circle-photo"><img src="assets/janine-photo.jpg" alt="Janine Isaacs"></div>
+    </div>
+    <h1 class="site-name">Janine Isaacs</h1>
+    <p class="site-tagline">Helping women see the power they're still burying</p>
+  </div>
+  <div class="header-divider"></div>
+  <nav class="site-nav">
+  <a href="index.html">Home</a>
+  <a href="philosophy.html">The Philosophy</a>
+  <a href="this-is-for-you.html">This Is For You</a>
+  <a href="the-woman-behind-the-work.html">The Woman Behind The Work</a>
+  <a href="work-with-me.html">Work With Me</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="reflections.html">Reflections</a>
+  <a href="contact.html" class="active">Contact</a>
+</nav>
+</header>
+<main class="page-content">
+
+<div class="contact-hero">
+  <h2>Let's talk</h2>
+  <p class="contact-hero-sub">You already know. Reach out.</p>
+  <p class="contact-hero-italic">Somewhere underneath the doubt and the voice that says be realistic, you already know what you want. No pressure. Just an open door.</p>
+</div>
+
+<div class="contact-form-wrap">
+  <h3>Send me a message</h3>
+  <p class="form-sub">I'll come back to you within 24 hours, usually sooner.</p>
+  <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <p style="display:none;"><label>Don't fill this in: <input name="bot-field"></label></p>
+
+    <div class="form-group">
+      <label for="name">Your name</label>
+      <input type="text" id="name" name="name" required autocomplete="name" placeholder="First name is fine">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone or WhatsApp number <span class="form-optional">optional</span></label>
+      <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+44 or local number">
+    </div>
+
+    <div class="form-group">
+      <label for="message">What's on your mind?</label>
+      <textarea id="message" name="message" required placeholder="No need to explain everything. A few words is enough."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="how-select">How did you hear about Janine?</label>
+      <select id="how-select" name="how" onchange="handleHowChange(this)">
+        <option value="" disabled selected>Please select…</option>
+        <optgroup label="Online">
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="Google / Search">Google / Search</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Facebook">Facebook</option>
+        </optgroup>
+        <optgroup label="Professional referral">
+          <option value="Family lawyer referral">Family lawyer</option>
+          <option value="Mediator referral">Mediator</option>
+          <option value="Financial advisor referral">Financial advisor</option>
+          <option value="Therapist / counsellor referral">Therapist / counsellor</option>
+        </optgroup>
+        <optgroup label="Personal">
+          <option value="Friend recommendation">Friend recommendation</option>
+          <option value="Family recommendation">Family recommendation</option>
+        </optgroup>
+        <option value="other">Other / tell me more…</option>
+      </select>
+    </div>
+
+    <div class="form-group" id="how-other-group" style="display:none;">
+      <label for="how-other">Tell us more</label>
+      <input type="text" id="how-other" name="how-detail" placeholder="Name of person who recommended you, or where you found us">
+    </div>
+
+    <div class="form-submit">
+      <button type="submit" class="btn-cta">Send message</button>
+    </div>
+    <p class="form-note">Your message comes straight to Janine. No third parties, no sales process.</p>
+  </form>
+
+  <script>
+  function handleHowChange(sel) {
+    var otherGroup = document.getElementById('how-other-group');
+    var otherInput = document.getElementById('how-other');
+    if (sel.value === 'other') {
+      otherGroup.style.display = '';
+      otherInput.setAttribute('required', '');
+    } else {
+      otherGroup.style.display = 'none';
+      otherInput.removeAttribute('required');
+    }
+  }
+  </script>
+</div>
+
+<div style="padding:0 18px;"><div class="gold-rule"></div></div>
+
+<div class="contact-other-methods">
+  <p class="contact-methods-label">Or reach out directly</p>
+  <div class="contact-methods-grid">
+    <div class="contact-method-item">
+      <p class="cm-label">WhatsApp</p>
+      <p class="cm-value"><a href="https://wa.me/447747897113" target="_blank" rel="noopener">Message me directly</a></p>
+    </div>
+    <div class="contact-method-item">
+      <p class="cm-label">Phone</p>
+      <p class="cm-value"><a href="tel:+447747897113">+44 7747 897113</a></p>
+    </div>
+    <div class="contact-method-item">
+      <p class="cm-label">LinkedIn</p>
+      <p class="cm-value"><a href="https://linkedin.com/in/janineisaacs" target="_blank" rel="noopener">linkedin.com/in/janineisaacs</a></p>
+    </div>
+    <div class="contact-method-item">
+      <p class="cm-label">Discovery call</p>
+      <p class="cm-value"><a href="https://wa.me/447747897113" target="_blank" rel="noopener">Free 30 minutes</a></p>
+    </div>
+  </div>
+</div>
+
+<div style="padding:0 18px 0;">
+  <div class="newsletter-card">
+    <p class="nl-label">Monthly Newsletter</p>
+    <h3>Stay connected</h3>
+    <p>A monthly letter on what it really feels like to navigate this, the moments that shift things, and the quiet work of finding your way back to yourself. No noise. Just something worth reading.</p>
+    <p class="nl-coming">Coming soon — drop your email below and you'll be the first to know.</p>
+  </div>
+</div>
+
+<div class="contact-closing">
+  <p>There's a quiet voice in you that knows life can be more. If you're willing to listen, you know where I am. No pressure, just an open door.</p>
+</div>
+</main>
+<div class="global-contact-footer">
+  <div class="gcf-inner">
+    <p class="gcf-heading">Let's talk</p>
+    <p class="gcf-sub">No pressure, just an open door.</p>
+    <div class="gcf-buttons">
+      <a href="https://wa.me/447747897113" class="gcf-btn gcf-btn-primary" target="_blank" rel="noopener">Message me on WhatsApp</a>
+      <a href="reflections.html">Reflections</a>
+  <a href="contact.html" class="gcf-btn gcf-btn-secondary">Send a message</a>
+      <a href="https://linkedin.com/in/janineisaacs" class="gcf-btn gcf-btn-ghost" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    </div>
+    <p class="gcf-newsletter">Monthly newsletter coming soon — drop your email and you'll be the first to know.</p>
+  </div>
+</div>
+<div class="copyright-bar"><p>Janine Isaacs &nbsp;|&nbsp; &copy; 2026 All rights reserved.</p></div>
+</body>
+</html>
