@@ -107,5 +107,33 @@
   </div>
 </div>
 <div class="copyright-bar"><p>Janine Isaacs &nbsp;|&nbsp; &copy; 2026 All rights reserved.</p></div>
+<script>
+function toggleNav() {
+  var nav = document.getElementById('site-nav');
+  var btn = document.querySelector('.hamburger');
+  if (!nav || !btn) return;
+  var isOpen = nav.classList.contains('open');
+  if (isOpen) {
+    nav.classList.remove('open');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  } else {
+    nav.classList.add('open');
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+document.addEventListener('DOMContentLoaded', function() {
+  var links = document.querySelectorAll('.site-nav a');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function() {
+      var nav = document.getElementById('site-nav');
+      var btn = document.querySelector('.hamburger');
+      if (nav) nav.classList.remove('open');
+      if (btn) { btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+    });
+  }
+});
+</script>
 </body>
 </html>
