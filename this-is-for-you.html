@@ -69,7 +69,15 @@
       <a href="contact.html" class="gcf-btn gcf-btn-secondary">Send a message</a>
       <a href="https://linkedin.com/in/janineisaacs" class="gcf-btn gcf-btn-ghost" target="_blank" rel="noopener">Connect on LinkedIn</a>
     </div>
-    <p class="gcf-newsletter">Monthly newsletter coming soon — drop your email and you'll be the first to know.</p>
+    <form class="gcf-newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="nl-bot2">
+      <input type="hidden" name="form-name" value="newsletter">
+      <p style="display:none;"><input name="nl-bot2"></p>
+      <div class="gcf-nl-row">
+        <input type="email" name="email" required placeholder="Your email" autocomplete="email" class="gcf-nl-input">
+        <button type="submit" class="gcf-nl-btn">Join</button>
+      </div>
+      <p class="gcf-newsletter">Monthly newsletter — no noise, just something worth reading.</p>
+    </form>
   </div>
 </div>
 <div class="copyright-bar"><p>Janine Isaacs &nbsp;|&nbsp; &copy; 2026 All rights reserved.</p></div>

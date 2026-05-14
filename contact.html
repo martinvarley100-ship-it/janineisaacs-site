@@ -132,10 +132,6 @@
       <p class="cm-label">LinkedIn</p>
       <p class="cm-value"><a href="https://linkedin.com/in/janineisaacs" target="_blank" rel="noopener">linkedin.com/in/janineisaacs</a></p>
     </div>
-    <div class="contact-method-item">
-      <p class="cm-label">Discovery call</p>
-      <p class="cm-value"><a href="https://wa.me/447747897113" target="_blank" rel="noopener">Free 30 minutes</a></p>
-    </div>
   </div>
 </div>
 
@@ -144,9 +140,16 @@
     <p class="nl-label">Monthly Newsletter</p>
     <h3>Stay connected</h3>
     <p>A monthly letter on what it really feels like to navigate this, the moments that shift things, and the quiet work of finding your way back to yourself. No noise. Just something worth reading.</p>
-    <p class="nl-coming">Coming soon — drop your email below and you'll be the first to know.</p>
+    <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="nl-bot">
+      <input type="hidden" name="form-name" value="newsletter">
+      <p style="display:none;"><input name="nl-bot"></p>
+      <div class="newsletter-input-row">
+        <input type="email" name="email" required placeholder="Your email address" autocomplete="email" class="nl-email-input">
+        <button type="submit" class="btn-cta nl-submit">Subscribe</button>
+      </div>
+      <p class="nl-consent">No spam, ever. Unsubscribe any time.</p>
+    </form>
   </div>
-</div>
 
 <div class="contact-closing">
   <p>There's a quiet voice in you that knows life can be more. If you're willing to listen, you know where I am. No pressure, just an open door.</p>
@@ -161,7 +164,15 @@
       <a href="contact.html" class="gcf-btn gcf-btn-secondary">Send a message</a>
       <a href="https://linkedin.com/in/janineisaacs" class="gcf-btn gcf-btn-ghost" target="_blank" rel="noopener">Connect on LinkedIn</a>
     </div>
-    <p class="gcf-newsletter">Monthly newsletter coming soon — drop your email and you'll be the first to know.</p>
+    <form class="gcf-newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="nl-bot2">
+      <input type="hidden" name="form-name" value="newsletter">
+      <p style="display:none;"><input name="nl-bot2"></p>
+      <div class="gcf-nl-row">
+        <input type="email" name="email" required placeholder="Your email" autocomplete="email" class="gcf-nl-input">
+        <button type="submit" class="gcf-nl-btn">Join</button>
+      </div>
+      <p class="gcf-newsletter">Monthly newsletter — no noise, just something worth reading.</p>
+    </form>
   </div>
 </div>
 <div class="copyright-bar"><p>Janine Isaacs &nbsp;|&nbsp; &copy; 2026 All rights reserved.</p></div>

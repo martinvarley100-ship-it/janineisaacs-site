@@ -663,3 +663,182 @@ p:last-child { margin-bottom: 0; }
   .hamburger { display: none; }
   .site-nav { display: flex !important; }
 }
+
+/* ── TYPOGRAPHY READABILITY IMPROVEMENTS ── */
+/* Increase body text size and contrast on mobile */
+body { font-size: 17px; }
+
+.section-inner p,
+.story-section p,
+.about-body p,
+.pkg-desc,
+.statement-item,
+.b2b-inner p {
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.85;
+}
+
+/* Section labels — darker and slightly larger */
+.section-label,
+.story-label,
+.pkg-eyebrow,
+.b2b-eyebrow,
+.testimonial-name-label,
+.contact-methods-label,
+.gcf-label,
+.nl-label,
+.c-label,
+.cm-label {
+  color: var(--gold);
+  opacity: 1;
+  font-size: 0.68rem;
+}
+
+/* Secondary text — improve contrast */
+.gcf-sub,
+.form-sub,
+.pkg-ideal,
+.post-excerpt,
+.contact-hero-italic {
+  color: var(--text-mid);
+  opacity: 1;
+}
+
+/* Nav links — slightly larger on mobile */
+@media (max-width: 700px) {
+  .site-nav a { font-size: 0.78rem; letter-spacing: 0.14em; }
+  .site-tagline { font-size: 0.92rem; }
+  .section-label, .story-label { font-size: 0.7rem; }
+}
+
+/* ── DISCOVERY CALL — CHECKBOX GROUP ── */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 0 4px;
+}
+@media (min-width: 480px) {
+  .checkbox-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+}
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  min-height: 44px;
+  font-weight: 300;
+}
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  border: 1px solid rgba(61,47,32,0.3);
+  border-bottom: 2px solid rgba(61,47,32,0.35);
+  background: var(--white);
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  padding: 0;
+}
+.checkbox-label input[type="checkbox"]:checked {
+  background: var(--gold);
+  border-color: var(--gold);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='9' viewBox='0 0 12 9'%3E%3Cpath d='M1 4l3.5 3.5L11 1' stroke='%231a1a1a' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ── NEWSLETTER SIGNUP FORM ── */
+.newsletter-form { margin-top: 20px; }
+.newsletter-input-row {
+  display: flex;
+  gap: 0;
+  margin-bottom: 10px;
+}
+.nl-email-input {
+  flex: 1;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-primary);
+  background: var(--white);
+  border: 1px solid rgba(61,47,32,0.2);
+  border-right: none;
+  padding: 13px 16px;
+  outline: none;
+  min-height: 48px;
+  transition: border-color 0.2s;
+}
+.nl-email-input:focus { border-color: var(--gold); }
+.nl-submit {
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+  min-height: 48px;
+  padding: 0 24px;
+}
+.nl-consent {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Footer newsletter form */
+.gcf-newsletter-form { margin-top: 8px; }
+.gcf-nl-row {
+  display: flex;
+  gap: 0;
+  margin-bottom: 10px;
+  max-width: 400px;
+  margin: 0 auto 10px;
+}
+.gcf-nl-input {
+  flex: 1;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 300;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(201,169,110,0.3);
+  border-right: none;
+  color: #fff;
+  padding: 11px 14px;
+  outline: none;
+  min-height: 44px;
+  transition: border-color 0.2s;
+}
+.gcf-nl-input::placeholder { color: rgba(255,255,255,0.35); }
+.gcf-nl-input:focus { border-color: var(--gold); }
+.gcf-nl-btn {
+  background: var(--gold);
+  color: var(--hero-bg);
+  border: none;
+  padding: 0 20px;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  min-height: 44px;
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+.gcf-nl-btn:hover { background: var(--gold-light); }
+.gcf-newsletter {
+  font-style: italic;
+  color: rgba(255,255,255,0.3);
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: 8px;
+}

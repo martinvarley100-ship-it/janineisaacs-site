@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Discovery Call — Janine Isaacs</title>
+<meta name="description" content="Request a free Discovery Call with Janine Isaacs, Life Coach.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="header-identity-link"><div class="header-identity">
+    <div class="circles-oo">
+      <div class="circle-ji">JI</div>
+      <div class="circle-photo"><img src="assets/janine-photo.jpg" alt="Janine Isaacs"></div>
+    </div>
+    <h1 class="site-name">Janine Isaacs</h1>
+    <p class="site-tagline">Helping women see the power they're still burying</p>
+  </div></a>
+  <div class="header-divider"></div>
+  <button class="hamburger" onclick="toggleNav()" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="site-nav" id="site-nav">
+  <a href="index.html">Home</a>
+  <a href="philosophy.html">The Philosophy</a>
+  <a href="this-is-for-you.html">This Is For You</a>
+  <a href="the-woman-behind-the-work.html">The Woman Behind The Work</a>
+  <a href="work-with-me.html" class="active">Work With Me</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+<main class="page-content">
+
+<div class="contact-hero">
+  <h2>Request a Discovery Call</h2>
+  <p class="contact-hero-sub">Free &nbsp;|&nbsp; 30 minutes</p>
+  <p class="contact-hero-italic">This isn't a sales call. It's a chance to talk, to see whether this feels right, and to find out whether we're a good fit. No pressure either way.</p>
+</div>
+
+<div class="contact-form-wrap" style="max-width:680px;">
+  <h3>Tell me a little about yourself</h3>
+  <p class="form-sub">I read every enquiry personally. If it feels like we could work well together, I'll be in touch to arrange a time.</p>
+
+  <form class="contact-form" name="discovery-call" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="discovery-call">
+    <p style="display:none;"><label>Don't fill this in: <input name="bot-field"></label></p>
+
+    <div class="form-group">
+      <label for="dc-name">Your name</label>
+      <input type="text" id="dc-name" name="name" required autocomplete="name" placeholder="First name is fine">
+    </div>
+
+    <div class="form-group">
+      <label for="dc-phone">Best number to reach you <span class="form-optional">phone or WhatsApp</span></label>
+      <input type="tel" id="dc-phone" name="phone" required autocomplete="tel" placeholder="+44 or local number">
+    </div>
+
+    <div class="form-group">
+      <label for="dc-situation">What has brought you here?</label>
+      <textarea id="dc-situation" name="situation" required placeholder="A few words is enough. There's no right or wrong answer." style="min-height:110px;"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="dc-hoping">What are you hoping a conversation might help with? <span class="form-optional">optional</span></label>
+      <textarea id="dc-hoping" name="hoping_for" placeholder="Whatever feels relevant to share." style="min-height:90px;"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Preferred days for a call <span class="form-optional">tick all that apply</span></label>
+      <div class="checkbox-group">
+        <label class="checkbox-label"><input type="checkbox" name="days" value="Monday"> Monday</label>
+        <label class="checkbox-label"><input type="checkbox" name="days" value="Tuesday"> Tuesday</label>
+        <label class="checkbox-label"><input type="checkbox" name="days" value="Wednesday"> Wednesday</label>
+        <label class="checkbox-label"><input type="checkbox" name="days" value="Thursday"> Thursday</label>
+        <label class="checkbox-label"><input type="checkbox" name="days" value="Friday"> Friday</label>
+        <label class="checkbox-label"><input type="checkbox" name="days" value="Weekend"> Weekend</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Preferred times <span class="form-optional">tick all that apply</span></label>
+      <div class="checkbox-group">
+        <label class="checkbox-label"><input type="checkbox" name="times" value="Morning (8am–12pm)"> Morning &nbsp;<span class="form-optional">8am–12pm</span></label>
+        <label class="checkbox-label"><input type="checkbox" name="times" value="Afternoon (12pm–5pm)"> Afternoon &nbsp;<span class="form-optional">12pm–5pm</span></label>
+        <label class="checkbox-label"><input type="checkbox" name="times" value="Evening (5pm–8pm)"> Evening &nbsp;<span class="form-optional">5pm–8pm</span></label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dc-anything">Anything else you'd like me to know? <span class="form-optional">optional</span></label>
+      <textarea id="dc-anything" name="anything_else" placeholder="Completely optional." style="min-height:80px;"></textarea>
+    </div>
+
+    <div class="form-submit">
+      <button type="submit" class="btn-cta">Send my enquiry</button>
+    </div>
+    <p class="form-note">I'll review your enquiry and come back to you within 48 hours. If I feel we're a good fit, I'll suggest some times for a call.</p>
+  </form>
+</div>
+</main>
+<div class="global-contact-footer">
+  <div class="gcf-inner">
+    <p class="gcf-heading">Let's talk</p>
+    <p class="gcf-sub">No pressure, just an open door.</p>
+    <div class="gcf-buttons">
+      <a href="https://wa.me/447747897113" class="gcf-btn gcf-btn-primary" target="_blank" rel="noopener">Message me on WhatsApp</a>
+      <a href="contact.html" class="gcf-btn gcf-btn-secondary">Send a message</a>
+      <a href="https://linkedin.com/in/janineisaacs" class="gcf-btn gcf-btn-ghost" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    </div>
+    <form class="gcf-newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="nl-bot2">
+      <input type="hidden" name="form-name" value="newsletter">
+      <p style="display:none;"><input name="nl-bot2"></p>
+      <div class="gcf-nl-row">
+        <input type="email" name="email" required placeholder="Your email" autocomplete="email" class="gcf-nl-input">
+        <button type="submit" class="gcf-nl-btn">Join</button>
+      </div>
+      <p class="gcf-newsletter">Monthly newsletter — no noise, just something worth reading.</p>
+    </form>
+  </div>
+</div>
+<div class="copyright-bar"><p>Janine Isaacs &nbsp;|&nbsp; &copy; 2026 All rights reserved.</p></div>
+<script>
+function toggleNav() {
+  var nav = document.getElementById('site-nav');
+  var btn = document.querySelector('.hamburger');
+  if (!nav || !btn) return;
+  var isOpen = nav.classList.contains('open');
+  if (isOpen) {
+    nav.classList.remove('open'); btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  } else {
+    nav.classList.add('open'); btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+document.addEventListener('DOMContentLoaded', function() {
+  var links = document.querySelectorAll('.site-nav a');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function() {
+      var nav = document.getElementById('site-nav');
+      var btn = document.querySelector('.hamburger');
+      if (nav) nav.classList.remove('open');
+      if (btn) { btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+    });
+  }
+});
+</script>
+</body>
+</html>
