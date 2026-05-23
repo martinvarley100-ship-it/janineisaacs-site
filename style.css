@@ -135,4 +135,166 @@ p:last-child { margin-bottom: 0; }
   font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 14px; font-weight: 400;
 }
-.pul
+.pull-quote {
+  border-left: 2px solid var(--gold);
+  padding: 16px 0 16px 24px; margin: 24px 0;
+}
+.pull-quote p {
+  font-family: var(--serif); font-size: 1.1rem; font-style: italic;
+  color: var(--text-mid); line-height: 1.55;
+}
+@media (min-width: 600px) { .pull-quote p { font-size: clamp(1.05rem, 2.5vw, 1.3rem); } }
+
+/* ── BUTTONS ── */
+.btn-cta {
+  display: inline-block; background: var(--cta); color: #fff;
+  font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 14px 32px; min-height: 44px; transition: background 0.3s;
+  border: none; cursor: pointer;
+}
+.btn-cta:hover { background: var(--cta-hover); }
+
+.btn-ghost {
+  display: inline-block; border: 1px solid var(--gold); color: var(--gold);
+  font-size: 0.67rem; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 13px 28px; min-height: 44px; transition: all 0.3s;
+}
+.btn-ghost:hover { background: var(--gold); color: var(--hero-bg); }
+
+.btn-text {
+  font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--gold); border-bottom: 1px solid rgba(201,169,110,0.35);
+  padding-bottom: 3px; transition: all 0.3s; display: inline-block;
+  min-height: 44px; line-height: 44px;
+}
+.btn-text:hover { color: var(--gold-light); }
+
+.page-cta-strip { text-align: center; padding: 32px 18px; background: var(--body-bg); }
+
+/* ── HOME ── */
+.home-hero { text-align: center; padding: 52px 18px 40px; }
+.home-hero h2 { font-size: 1.8rem; margin-bottom: 16px; }
+.home-hero p  { color: var(--text-mid); max-width: 540px; margin: 0 auto; }
+@media (min-width: 600px) { .home-hero h2 { font-size: clamp(2rem, 5vw, 3rem); } }
+
+.testimonial-card {
+  background: var(--white); border: 1px solid rgba(201,169,110,0.2);
+  padding: 28px 22px; max-width: 720px; margin: 0 auto;
+}
+@media (min-width: 600px) { .testimonial-card { padding: 36px 32px; } }
+.testimonial-card .quote-mark { font-family: var(--serif); font-size: 2.6rem; line-height: 0.8; color: var(--gold); opacity: 0.45; display: block; margin-bottom: 12px; }
+.testimonial-card p { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--text-mid); line-height: 1.7; }
+.testimonial-card .testimonial-name { font-family: var(--sans); font-style: normal; font-size: 0.7rem; letter-spacing: 0.14em; color: var(--gold); margin-top: 16px; margin-bottom: 0; }
+.testimonial-read-more { margin-top: 24px; text-align: center; }
+
+/* ── STATEMENT LIST ── */
+.statement-list { list-style: none; display: flex; flex-direction: column; gap: 3px; margin: 20px 0; }
+.statement-item {
+  background: var(--white); border-left: 3px solid var(--gold);
+  padding: 18px 20px; font-size: 0.97rem; color: var(--text-mid); line-height: 1.7;
+}
+
+/* ── WORK WITH ME ── */
+.discovery-card {
+  background: var(--white); border: 1px solid rgba(201,169,110,0.3);
+  border-top: 3px solid var(--gold); padding: 28px 22px; margin: 0 auto 24px;
+}
+@media (min-width: 600px) { .discovery-card { padding: 36px 32px; } }
+.discovery-card .pkg-eyebrow { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; }
+.discovery-card h3 { font-size: 1.5rem; margin-bottom: 4px; }
+.discovery-card .pkg-sub { font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-bottom: 16px; }
+
+.packages-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-bottom: 24px; }
+@media (min-width: 600px) { .packages-grid { grid-template-columns: 1fr 1fr; } }
+
+.package-card { background: var(--white); border: 1px solid rgba(201,169,110,0.2); padding: 24px 20px; display: flex; flex-direction: column; }
+@media (min-width: 600px) { .package-card { padding: 28px 26px; } }
+.package-card .pkg-eyebrow { font-size: 0.57rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.package-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+.package-card .pkg-desc { font-size: 0.94rem; color: var(--text-mid); line-height: 1.7; flex-grow: 1; }
+.package-card .pkg-ideal { font-style: italic; font-size: 0.87rem; color: var(--text-muted); border-left: 2px solid var(--gold); padding-left: 12px; margin: 14px 0; }
+.package-card .pkg-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(0,0,0,0.06); flex-wrap: wrap; gap: 10px; }
+.pkg-price { font-family: var(--serif); font-size: 1.4rem; color: var(--text-primary); }
+
+.full-journey-card { background: var(--white); border: 1px solid rgba(201,169,110,0.2); padding: 28px 22px; }
+@media (min-width: 600px) { .full-journey-card { padding: 32px 28px; } }
+.full-journey-card h3 { font-size: 1.4rem; margin-bottom: 8px; }
+.full-journey-card .pkg-eyebrow { font-size: 0.57rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; }
+
+.b2b-section { background: var(--hero-bg); padding: 48px 18px; }
+@media (min-width: 600px) { .b2b-section { padding: 56px 24px; } }
+.b2b-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+.b2b-eyebrow { font-size: 0.58rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.b2b-inner p { color: rgba(255,255,255,0.68); font-size: 0.97rem; line-height: 1.8; }
+
+/* ── WOMAN BEHIND THE WORK ── */
+.story-section { padding: 44px 18px; }
+@media (min-width: 600px) { .story-section { padding: 60px 40px; } }
+.story-label { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; }
+.fear-shame { text-align: center; font-family: var(--serif); font-size: 1.4rem; letter-spacing: 0.2em; color: var(--text-primary); margin: 24px 0; }
+@media (min-width: 600px) { .fear-shame { font-size: clamp(1.4rem, 4vw, 1.9rem); } }
+.headshot-wrap { text-align: center; margin: 0 auto; max-width: 220px; padding: 8px 0; }
+@media (min-width: 600px) { .headshot-wrap { max-width: 260px; } }
+
+/* ── TESTIMONIALS ── */
+.testimonials-header { text-align: center; padding: 48px 18px 28px; }
+.testimonials-header h2 { margin-bottom: 6px; }
+.testimonials-header p { font-style: italic; color: var(--text-mid); margin: 0; }
+.testimonial-name-label { font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 12px; }
+.testimonial-full-card { background: var(--white); border: 1px solid rgba(201,169,110,0.15); padding: 26px 20px; margin: 0 auto; max-width: 720px; }
+@media (min-width: 600px) { .testimonial-full-card { padding: 34px 30px; } }
+.testimonial-full-card .quote-mark { font-family: var(--serif); font-size: 2.6rem; line-height: 0.8; color: var(--gold); opacity: 0.38; display: block; margin-bottom: 10px; }
+.testimonial-full-card .preview-text p,
+.testimonial-full-card .full-text p { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--text-mid); line-height: 1.7; }
+.testimonial-full-card .full-text { display: none; }
+.testimonial-full-card.expanded .full-text { display: block; }
+.testimonial-full-card.expanded .preview-text { display: none; }
+.testimonial-full-card .t-name { font-family: var(--sans); font-style: normal; font-size: 0.7rem; letter-spacing: 0.12em; color: var(--gold); margin-top: 16px; margin-bottom: 0; }
+.read-more-btn { background: none; border: none; cursor: pointer; font-family: var(--sans); font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); padding: 0; margin-top: 14px; border-bottom: 1px solid rgba(201,169,110,0.3); padding-bottom: 2px; display: inline-block; min-height: 44px; line-height: 44px; }
+
+/* ── CONTACT PAGE ── */
+.contact-hero { background: var(--hero-bg); text-align: center; padding: 52px 18px 44px; }
+.contact-hero h2 { color: var(--gold); font-size: 2rem; margin-bottom: 10px; }
+.contact-hero .contact-hero-sub { color: #fff; font-size: 1rem; margin-bottom: 8px; }
+.contact-hero .contact-hero-italic { color: rgba(255,255,255,0.5); font-style: italic; font-size: 0.93rem; margin: 0; max-width: 480px; margin: 0 auto; }
+@media (min-width: 600px) { .contact-hero h2 { font-size: clamp(2rem, 5vw, 3rem); } }
+
+.contact-form-wrap { padding: 44px 18px; max-width: 640px; margin: 0 auto; }
+@media (min-width: 600px) { .contact-form-wrap { padding: 56px 24px; } }
+.contact-form-wrap h3 { margin-bottom: 6px; }
+.contact-form-wrap .form-sub { color: var(--text-mid); font-size: 0.93rem; margin-bottom: 28px; }
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label {
+  font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-mid); font-weight: 400;
+}
+.form-optional {
+  font-size: 0.65rem; letter-spacing: 0.08em; text-transform: none;
+  color: var(--text-muted); font-style: italic; font-weight: 300; margin-left: 6px;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  font-family: var(--sans); font-size: 1rem; font-weight: 300;
+  color: var(--text-primary); background: var(--white);
+  border: 1px solid rgba(61,47,32,0.18); border-bottom: 2px solid rgba(61,47,32,0.22);
+  padding: 14px 16px; width: 100%; outline: none;
+  -webkit-appearance: none; appearance: none; border-radius: 0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  min-height: 48px; line-height: 1.5;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--gold); border-bottom-color: var(--gold);
+  box-shadow: 0 2px 0 0 var(--gold); outline: none;
+}
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a96e' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 16px center;
+  padding-right: 40px; cursor: pointer;
+}
+.form-group select option { color: var(--text-primary); background: #fff; }
+.form-group select optgroup { font-weight: 500; color: var(--text-muted); font-size: 0.85rem; }
+.form-group textarea { resize: vertical; min-he
