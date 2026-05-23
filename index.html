@@ -117,5 +117,17 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+  <!-- Hidden form for Netlify form detection — do not remove -->
+<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="tel" name="phone" />
+  <textarea name="message"></textarea>
+  <select name="how"><option></option></select>
+  <input type="text" name="how-detail" />
+</form>
+
+<form name="newsletter" netlify netlify-honeypot="nl-bot" hidden>
+  <input type="email" name="email" />
+</form>
 </body>
 </html>
