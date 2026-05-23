@@ -1685,8 +1685,9 @@ body { font-size: 17px; }
   text-align: center;
   margin-top: 8px;
 }
-/* ============================================================
+/*/* ============================================================
    LAYOUT CONSISTENCY FIXES — Janine feedback May 2026
+   v2 — tightened after first review
    ============================================================ */
 
 /* 1. All opening sections left-aligned, never centred */
@@ -1700,12 +1701,13 @@ body { font-size: 17px; }
   margin: 0;
 }
 
-/* 2. Drop the first content section down from the nav on every page */
+/* 2. Top of page — modest drop from the nav, tighter to next section */
 .page-content > .section:first-child,
 .page-content > .home-hero:first-child,
 .page-content > .story-section:first-child,
 .page-content > .testimonials-header:first-child {
-  padding-top: 80px;
+  padding-top: 36px;
+  padding-bottom: 24px;
 }
 
 @media (min-width: 600px) {
@@ -1713,19 +1715,33 @@ body { font-size: 17px; }
   .page-content > .home-hero:first-child,
   .page-content > .story-section:first-child,
   .page-content > .testimonials-header:first-child {
-    padding-top: 100px;
+    padding-top: 48px;
+    padding-bottom: 28px;
   }
 }
 
-/* 3. More breathing room between body paragraphs */
+/* 3. Standard breathing room between body paragraphs */
 .section-inner p,
 .story-section p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.1rem;
 }
 
-/* 4. Section-break feel for short interstitial lines
+/* 4. Modest section-break feel for short interstitial lines
       e.g. "But here's what nobody tells you." on Philosophy */
 .lift {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* 5. Tighten the section right after the home hero */
+.home-hero + div + .section,
+.home-hero + .section {
+  padding-top: 24px;
+}
+
+@media (min-width: 600px) {
+  .home-hero + div + .section,
+  .home-hero + .section {
+    padding-top: 32px;
+  }
 }
