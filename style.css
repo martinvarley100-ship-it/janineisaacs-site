@@ -504,37 +504,53 @@ body { font-size: 17px; }
 .nl-consent { font-size: 0.75rem; color: var(--text-muted); font-style: italic; margin: 0; }
 /* ============================================================
    LAYOUT CONSISTENCY FIXES — Janine feedback May 2026
-   v6 — consistent across testimonials, contact, philosophy, home, work with me
+   v8 — tighter lift, tighter testimonials gap
    ============================================================ */
 
-/* 1. Opening sections left-aligned */
-.home-hero,
-.testimonials-header,
-.contact-hero {
-  text-align: left;
+/* 1. Page titles centred site-wide */
+.section-inner h2,
+.story-section h2,
+.home-hero h2,
+.testimonials-header h2,
+.contact-hero h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
+/* 2. Body paragraphs always left-aligned, regardless of parent inheritance */
+.section-inner p,
+.story-section p,
+.home-hero p,
+.testimonials-header p,
+.contact-hero p,
+.about-body p,
+.pkg-desc,
+.statement-item {
+  text-align: left;
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
+}
+
+/* 3. Home hero subhead — narrow 540px box, centred on page, left-aligned text */
 .home-hero p {
   max-width: 540px;
-  margin: 0;
+  margin: 0 auto;
 }
 
-/* 2. Testimonials header — sit in the same 720px centred column 
-      as other pages (was full-width pinned to page edge) */
+/* 4. Testimonials header — tight bottom padding to close gap to first card */
 .testimonials-header {
   max-width: 720px;
   margin: 0 auto;
-  padding: 48px 18px 12px;
+  padding: 48px 18px 4px;
 }
 
 @media (min-width: 600px) {
   .testimonials-header {
-    padding: 72px 24px 16px;
+    padding: 72px 24px 8px;
   }
 }
 
-/* 3. Contact hero — content in a 720px centred column,
-      dark background still spans full width */
+/* 5. Contact hero — content in 720px centred column, dark bg spans full width */
 .contact-hero {
   padding: 48px 18px 24px;
 }
@@ -552,7 +568,7 @@ body { font-size: 17px; }
   margin-right: auto;
 }
 
-/* 4. Top of body-content pages — moderate drop, tight to next section */
+/* 6. Top of body-content pages — moderate drop, tight to next section */
 .page-content > .section:first-child,
 .page-content > .home-hero:first-child,
 .page-content > .story-section:first-child {
@@ -569,42 +585,21 @@ body { font-size: 17px; }
   }
 }
 
-/* 5. Tighter H2 → first paragraph gap, everywhere */
-.section-inner h2,
-.story-section h2,
-.home-hero h2,
-.testimonials-header h2,
-.contact-hero h2 {
-  margin-bottom: 0.5rem;
-}
-
-/* 6. Tighter line-height AND paragraph spacing for body copy */
-.section-inner p,
-.story-section p,
-.about-body p,
-.pkg-desc,
-.statement-item,
-.b2b-inner p {
-  line-height: 1.6;
-  margin-bottom: 0.9rem;
-}
-
-/* 7. Keep FEAR. SHAME. GUILT. centred (beats the para rule above) */
+/* 7. Keep FEAR. SHAME. GUILT. centred (beats the body p rule) */
 .story-section .fear-shame,
 .section-inner .fear-shame {
   text-align: center;
   margin: 24px 0;
 }
 
-/* 8. Soft section-break for short interstitial lines
-      e.g. "But here's what nobody tells you." on Philosophy */
+/* 8. .lift pulled up to close the gap above
+      (negative margin needed because adjacent vertical margins collapse) */
 .lift {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: -0.4rem;
+  margin-bottom: 0;
 }
 
-/* 9. Tighten the section right after the home hero
-      (closes the gap before the testimonial card) */
+/* 9. Tighten the section right after the home hero */
 .home-hero + div + .section,
 .home-hero + .section {
   padding-top: 16px;
@@ -617,17 +612,18 @@ body { font-size: 17px; }
   }
 }
 
-/* 10. Tighten the section right after the testimonials header
-       (closes the gap before the first testimonial card) */
+/* 10. Tighten whatever comes after testimonials-header — section, div, anything */
 .testimonials-header + .section,
-.testimonials-header + div + .section {
-  padding-top: 16px;
+.testimonials-header + div + .section,
+.testimonials-header + * {
+  padding-top: 8px;
 }
 
 @media (min-width: 600px) {
   .testimonials-header + .section,
-  .testimonials-header + div + .section {
-    padding-top: 24px;
+  .testimonials-header + div + .section,
+  .testimonials-header + * {
+    padding-top: 12px;
   }
 }
 
@@ -642,7 +638,5 @@ body { font-size: 17px; }
   .page-content > .section:first-child + .section,
   .page-content > .section:first-child + div + .section {
     padding-top: 24px;
-  }
-}
   }
 }
