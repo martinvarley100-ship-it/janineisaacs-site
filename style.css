@@ -502,15 +502,15 @@ body { font-size: 17px; }
 .nl-email-input:focus { border-color: var(--gold); }
 .nl-submit { font-size: 0.68rem; letter-spacing: 0.15em; white-space: nowrap; min-height: 48px; padding: 0 24px; }
 .nl-consent { font-size: 0.75rem; color: var(--text-muted); font-style: italic; margin: 0; }
-
 /* ============================================================
    LAYOUT CONSISTENCY FIXES — Janine feedback May 2026
-   v5 — eased the top back up + centred fear-shame
+   v6 — consistent across testimonials, contact, philosophy, home, work with me
    ============================================================ */
 
-/* 1. All opening sections left-aligned, never centred */
+/* 1. Opening sections left-aligned */
 .home-hero,
-.testimonials-header {
+.testimonials-header,
+.contact-hero {
   text-align: left;
 }
 
@@ -519,11 +519,43 @@ body { font-size: 17px; }
   margin: 0;
 }
 
-/* 2. Top of page — moderate drop from the nav */
+/* 2. Testimonials header — sit in the same 720px centred column 
+      as other pages (was full-width pinned to page edge) */
+.testimonials-header {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 18px 12px;
+}
+
+@media (min-width: 600px) {
+  .testimonials-header {
+    padding: 72px 24px 16px;
+  }
+}
+
+/* 3. Contact hero — content in a 720px centred column,
+      dark background still spans full width */
+.contact-hero {
+  padding: 48px 18px 24px;
+}
+
+@media (min-width: 600px) {
+  .contact-hero {
+    padding: 72px 24px 32px;
+  }
+}
+
+.contact-hero > h2,
+.contact-hero > p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 4. Top of body-content pages — moderate drop, tight to next section */
 .page-content > .section:first-child,
 .page-content > .home-hero:first-child,
-.page-content > .story-section:first-child,
-.page-content > .testimonials-header:first-child {
+.page-content > .story-section:first-child {
   padding-top: 48px;
   padding-bottom: 12px;
 }
@@ -531,21 +563,22 @@ body { font-size: 17px; }
 @media (min-width: 600px) {
   .page-content > .section:first-child,
   .page-content > .home-hero:first-child,
-  .page-content > .story-section:first-child,
-  .page-content > .testimonials-header:first-child {
+  .page-content > .story-section:first-child {
     padding-top: 72px;
     padding-bottom: 16px;
   }
 }
 
-/* 3. Tighter H2 → first paragraph gap */
+/* 5. Tighter H2 → first paragraph gap, everywhere */
 .section-inner h2,
 .story-section h2,
-.home-hero h2 {
+.home-hero h2,
+.testimonials-header h2,
+.contact-hero h2 {
   margin-bottom: 0.5rem;
 }
 
-/* 4. Tighter line-height AND paragraph spacing for body copy */
+/* 6. Tighter line-height AND paragraph spacing for body copy */
 .section-inner p,
 .story-section p,
 .about-body p,
@@ -556,28 +589,60 @@ body { font-size: 17px; }
   margin-bottom: 0.9rem;
 }
 
-/* 5. Keep FEAR. SHAME. GUILT. centred */
+/* 7. Keep FEAR. SHAME. GUILT. centred (beats the para rule above) */
 .story-section .fear-shame,
 .section-inner .fear-shame {
   text-align: center;
   margin: 24px 0;
 }
 
-/* 6. Modest section-break feel for short interstitial lines */
+/* 8. Soft section-break for short interstitial lines
+      e.g. "But here's what nobody tells you." on Philosophy */
 .lift {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-/* 7. Tighten the section right after the home hero */
+/* 9. Tighten the section right after the home hero
+      (closes the gap before the testimonial card) */
 .home-hero + div + .section,
 .home-hero + .section {
-  padding-top: 24px;
+  padding-top: 16px;
 }
 
 @media (min-width: 600px) {
   .home-hero + div + .section,
   .home-hero + .section {
-    padding-top: 32px;
+    padding-top: 24px;
+  }
+}
+
+/* 10. Tighten the section right after the testimonials header
+       (closes the gap before the first testimonial card) */
+.testimonials-header + .section,
+.testimonials-header + div + .section {
+  padding-top: 16px;
+}
+
+@media (min-width: 600px) {
+  .testimonials-header + .section,
+  .testimonials-header + div + .section {
+    padding-top: 24px;
+  }
+}
+
+/* 11. Tighten the section right after a first-child section
+       (catches Work With Me's cards section under the intro) */
+.page-content > .section:first-child + .section,
+.page-content > .section:first-child + div + .section {
+  padding-top: 16px;
+}
+
+@media (min-width: 600px) {
+  .page-content > .section:first-child + .section,
+  .page-content > .section:first-child + div + .section {
+    padding-top: 24px;
+  }
+}
   }
 }
