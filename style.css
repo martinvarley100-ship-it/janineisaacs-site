@@ -297,4 +297,287 @@ p:last-child { margin-bottom: 0; }
 }
 .form-group select option { color: var(--text-primary); background: #fff; }
 .form-group select optgroup { font-weight: 500; color: var(--text-muted); font-size: 0.85rem; }
-.form-group textarea { resize: vertical; min-he
+.form-group textarea { resize: vertical; min-height: 130px; }
+.form-submit { margin-top: 12px; }
+.form-submit .btn-cta { width: 100%; text-align: center; display: block; font-size: 0.72rem; padding: 16px; min-height: 52px; }
+.form-note { font-size: 0.82rem; color: var(--text-muted); font-style: italic; text-align: center; margin-top: 14px; }
+
+.contact-other-methods { padding: 0 18px 48px; max-width: 640px; margin: 0 auto; }
+@media (min-width: 600px) { .contact-other-methods { padding: 0 24px 56px; } }
+.contact-methods-label { font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.contact-methods-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 400px) { .contact-methods-grid { grid-template-columns: 1fr; } }
+.contact-method-item { background: var(--white); border: 1px solid rgba(201,169,110,0.15); padding: 18px 16px; }
+.contact-method-item .cm-label { font-size: 0.54rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.contact-method-item .cm-value { font-size: 0.93rem; color: var(--text-primary); }
+.contact-method-item a { transition: color 0.3s; }
+.contact-method-item a:hover { color: var(--gold); }
+
+.newsletter-card { background: var(--off-white); border: 1px solid rgba(201,169,110,0.2); padding: 28px 22px; max-width: 640px; margin: 0 18px 32px; }
+@media (min-width: 640px) { .newsletter-card { margin: 0 auto 32px; padding: 32px 28px; } }
+.newsletter-card .nl-label { font-size: 0.56rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; }
+.newsletter-card h3 { margin-bottom: 10px; }
+.newsletter-card p { color: var(--text-mid); font-size: 0.94rem; }
+.newsletter-card .nl-coming { font-style: italic; color: var(--gold); border-left: 2px solid var(--gold); padding-left: 12px; margin-top: 16px; font-size: 0.9rem; }
+.contact-closing { text-align: center; padding: 24px 18px 44px; max-width: 540px; margin: 0 auto; }
+.contact-closing p { font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--text-mid); line-height: 1.7; }
+
+/* ── GLOBAL CONTACT FOOTER ── */
+.global-contact-footer { background: var(--hero-bg); padding: 48px 18px 28px; }
+.gcf-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+.gcf-heading {
+  font-family: var(--serif); font-size: 1.5rem;
+  color: var(--gold); margin-bottom: 6px;
+}
+.gcf-sub { color: rgba(255,255,255,0.42); font-style: italic; font-size: 0.88rem; margin-bottom: 28px; }
+.gcf-buttons { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+@media (min-width: 480px) {
+  .gcf-buttons { flex-direction: row; justify-content: center; flex-wrap: wrap; }
+}
+.gcf-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 12px 24px;
+  font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.18em;
+  text-transform: uppercase; font-weight: 400;
+  transition: all 0.3s; white-space: nowrap;
+}
+.gcf-btn-primary { background: var(--gold); color: var(--hero-bg); }
+.gcf-btn-primary:hover { background: var(--gold-light); }
+.gcf-btn-secondary { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.15); }
+.gcf-btn-secondary:hover { background: rgba(255,255,255,0.14); color: #fff; }
+.gcf-btn-ghost { color: var(--gold); border: 1px solid rgba(201,169,110,0.35); }
+.gcf-btn-ghost:hover { border-color: var(--gold); background: rgba(201,169,110,0.08); }
+
+.gcf-newsletter-form { margin-top: 8px; }
+.gcf-nl-row { display: flex; gap: 0; margin: 0 auto 10px; max-width: 400px; }
+.gcf-nl-input {
+  flex: 1; font-family: var(--sans); font-size: 1rem; font-weight: 300;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(201,169,110,0.3);
+  border-right: none; color: #fff; padding: 11px 14px;
+  outline: none; min-height: 44px; transition: border-color 0.2s;
+}
+.gcf-nl-input::placeholder { color: rgba(255,255,255,0.35); }
+.gcf-nl-input:focus { border-color: var(--gold); }
+.gcf-nl-btn {
+  background: var(--gold); color: var(--hero-bg); border: none; padding: 0 20px;
+  font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.15em;
+  text-transform: uppercase; cursor: pointer; min-height: 44px;
+  transition: background 0.3s; white-space: nowrap;
+}
+.gcf-nl-btn:hover { background: var(--gold-light); }
+.gcf-newsletter {
+  font-style: italic; color: rgba(255,255,255,0.28); font-size: 0.78rem;
+  text-align: center; border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: 20px; margin-top: 8px;
+}
+
+.copyright-bar { background: var(--copyright-bg); text-align: center; padding: 12px 18px; }
+.copyright-bar p { font-size: 0.63rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.2); margin: 0; }
+
+/* ── REFLECTIONS PAGE ── */
+.reflection-card { cursor: pointer; padding: 8px 0; transition: opacity 0.2s; }
+.reflection-card:hover { opacity: 0.78; }
+.post-date {
+  font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 12px;
+}
+.post-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 16px; }
+.reflection-card h3 {
+  font-family: var(--serif); font-style: italic; font-size: 1.35rem;
+  color: var(--text-primary); margin-bottom: 12px; line-height: 1.3;
+}
+.post-excerpt { font-size: 0.93rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px; }
+
+/* ── HEADER IDENTITY LINK ── */
+.header-identity-link { display: block; text-decoration: none; transition: opacity 0.2s; }
+.header-identity-link:hover { opacity: 0.85; }
+
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none; flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 44px; height: 44px;
+  background: none; border: none; cursor: pointer; padding: 8px; margin: 0 auto 6px;
+}
+.hamburger span {
+  display: block; width: 22px; height: 1.5px;
+  background: var(--gold); transition: all 0.3s; transform-origin: center;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+@media (max-width: 700px) {
+  .hamburger { display: flex; }
+  .site-nav {
+    display: none; flex-direction: column; align-items: stretch;
+    padding: 0; border-top: 1px solid rgba(201,169,110,0.15);
+  }
+  .site-nav.open { display: flex; }
+  .site-nav a {
+    padding: 14px 24px; font-size: 0.72rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    min-height: 48px; justify-content: flex-start;
+  }
+  .site-nav a.active { border-left: 3px solid var(--gold); padding-left: 21px; }
+}
+
+@media (min-width: 701px) {
+  .hamburger { display: none; }
+  .site-nav { display: flex !important; }
+}
+
+/* ── TYPOGRAPHY READABILITY ── */
+body { font-size: 17px; }
+
+.section-inner p,
+.story-section p,
+.about-body p,
+.pkg-desc,
+.statement-item,
+.b2b-inner p {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.section-label,
+.story-label,
+.pkg-eyebrow,
+.b2b-eyebrow,
+.testimonial-name-label,
+.contact-methods-label,
+.gcf-label,
+.nl-label,
+.c-label,
+.cm-label {
+  color: var(--gold); opacity: 1; font-size: 0.68rem;
+}
+
+.gcf-sub,
+.form-sub,
+.pkg-ideal,
+.post-excerpt,
+.contact-hero-italic {
+  color: var(--text-mid); opacity: 1;
+}
+
+@media (max-width: 700px) {
+  .site-nav a { font-size: 0.78rem; letter-spacing: 0.14em; }
+  .site-tagline { font-size: 0.92rem; }
+  .section-label, .story-label { font-size: 0.7rem; }
+}
+
+/* ── CHECKBOX GROUP ── */
+.checkbox-group { display: flex; flex-direction: column; gap: 10px; padding: 16px 0 4px; }
+@media (min-width: 480px) {
+  .checkbox-group { flex-direction: row; flex-wrap: wrap; gap: 12px 24px; }
+}
+.checkbox-label {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.95rem; color: var(--text-primary);
+  cursor: pointer; min-height: 44px; font-weight: 300;
+}
+.checkbox-label input[type="checkbox"] {
+  width: 18px; height: 18px; min-height: 18px;
+  border: 1px solid rgba(61,47,32,0.3); border-bottom: 2px solid rgba(61,47,32,0.35);
+  background: var(--white); appearance: none; -webkit-appearance: none;
+  border-radius: 0; cursor: pointer; flex-shrink: 0;
+  transition: all 0.2s; padding: 0;
+}
+.checkbox-label input[type="checkbox"]:checked {
+  background: var(--gold); border-color: var(--gold);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='9' viewBox='0 0 12 9'%3E%3Cpath d='M1 4l3.5 3.5L11 1' stroke='%231a1a1a' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: center;
+}
+
+/* ── NEWSLETTER SIGNUP FORM ── */
+.newsletter-form { margin-top: 20px; }
+.newsletter-input-row { display: flex; gap: 0; margin-bottom: 10px; }
+.nl-email-input {
+  flex: 1; font-family: var(--sans); font-size: 1rem; font-weight: 300;
+  color: var(--text-primary); background: var(--white);
+  border: 1px solid rgba(61,47,32,0.2); border-right: none;
+  padding: 13px 16px; outline: none; min-height: 48px;
+  transition: border-color 0.2s;
+}
+.nl-email-input:focus { border-color: var(--gold); }
+.nl-submit { font-size: 0.68rem; letter-spacing: 0.15em; white-space: nowrap; min-height: 48px; padding: 0 24px; }
+.nl-consent { font-size: 0.75rem; color: var(--text-muted); font-style: italic; margin: 0; }
+
+/* ============================================================
+   LAYOUT CONSISTENCY FIXES — Janine feedback May 2026
+   v5 — eased the top back up + centred fear-shame
+   ============================================================ */
+
+/* 1. All opening sections left-aligned, never centred */
+.home-hero,
+.testimonials-header {
+  text-align: left;
+}
+
+.home-hero p {
+  max-width: 540px;
+  margin: 0;
+}
+
+/* 2. Top of page — moderate drop from the nav */
+.page-content > .section:first-child,
+.page-content > .home-hero:first-child,
+.page-content > .story-section:first-child,
+.page-content > .testimonials-header:first-child {
+  padding-top: 48px;
+  padding-bottom: 12px;
+}
+
+@media (min-width: 600px) {
+  .page-content > .section:first-child,
+  .page-content > .home-hero:first-child,
+  .page-content > .story-section:first-child,
+  .page-content > .testimonials-header:first-child {
+    padding-top: 72px;
+    padding-bottom: 16px;
+  }
+}
+
+/* 3. Tighter H2 → first paragraph gap */
+.section-inner h2,
+.story-section h2,
+.home-hero h2 {
+  margin-bottom: 0.5rem;
+}
+
+/* 4. Tighter line-height AND paragraph spacing for body copy */
+.section-inner p,
+.story-section p,
+.about-body p,
+.pkg-desc,
+.statement-item,
+.b2b-inner p {
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
+}
+
+/* 5. Keep FEAR. SHAME. GUILT. centred */
+.story-section .fear-shame,
+.section-inner .fear-shame {
+  text-align: center;
+  margin: 24px 0;
+}
+
+/* 6. Modest section-break feel for short interstitial lines */
+.lift {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* 7. Tighten the section right after the home hero */
+.home-hero + div + .section,
+.home-hero + .section {
+  padding-top: 24px;
+}
+
+@media (min-width: 600px) {
+  .home-hero + div + .section,
+  .home-hero + .section {
+    padding-top: 32px;
+  }
+}
