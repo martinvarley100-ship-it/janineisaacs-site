@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Request a Discovery Call — Janine Isaacs</title>
-<meta name="description" content="Request a free Discovery Call with Janine Isaacs, Life Coach.">
+<title>Thank you — Janine Isaacs</title>
+<meta name="description" content="Janine Isaacs — Life Coach helping women reclaim the space they've given away.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -30,78 +30,130 @@
   <a href="philosophy.html">The Philosophy</a>
   <a href="this-is-for-you.html">This Is For You</a>
   <a href="the-woman-behind-the-work.html">The Woman Behind The Work</a>
-  <a href="work-with-me.html" class="active">Work With Me</a>
+  <a href="work-with-me.html">Work With Me</a>
   <a href="testimonials.html">Testimonials</a>
-  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="active">Contact</a>
 </nav>
 </header>
 <main class="page-content">
 
 <div class="contact-hero">
-  <h2>Request a Discovery Call</h2>
-  <p class="contact-hero-sub">Free &nbsp;|&nbsp; 30 minutes</p>
-  <p class="contact-hero-italic">This isn't a sales call. It's a chance to talk, to see whether this feels right, and to find out whether we're a good fit. No pressure either way.</p>
+  <h2>Let's talk</h2>
+  <h2>Thank you</h2>
+<p>Your message is on its way to Janine.</p>
+  <p class="contact-hero-italic">Somewhere underneath the doubt and the voice that says be realistic, you already know what you want. No pressure. Just an open door.</p>
 </div>
 
-<div class="contact-form-wrap" style="max-width:680px;">
-  <h3>Tell me a little about yourself</h3>
-  <p class="form-sub">I read every enquiry personally. If it feels like we could work well together, I'll be in touch to arrange a time.</p>
-
-  <form class="contact-form" name="discovery-call" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="discovery-call">
+<div class="contact-form-wrap">
+  <h3>Send me a message</h3>
+  <p class="form-sub">I'll come back to you within 24 hours, usually sooner.</p>
+<form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+    <input type="hidden" name="form-name" value="contact">
     <p style="display:none;"><label>Don't fill this in: <input name="bot-field"></label></p>
 
     <div class="form-group">
-      <label for="dc-name">Your name</label>
-      <input type="text" id="dc-name" name="name" required autocomplete="name" placeholder="First name is fine">
+      <label for="name">Your name</label>
+      <input type="text" id="name" name="name" required autocomplete="name" placeholder="First name is fine">
     </div>
 
     <div class="form-group">
-      <label for="dc-phone">Best number to reach you <span class="form-optional">phone or WhatsApp</span></label>
-      <input type="tel" id="dc-phone" name="phone" required autocomplete="tel" placeholder="+44 or local number">
+      <label for="phone">Phone or WhatsApp number <span class="form-optional">optional</span></label>
+      <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+44 or local number">
     </div>
 
     <div class="form-group">
-      <label for="dc-situation">What has brought you here?</label>
-      <textarea id="dc-situation" name="situation" required placeholder="A few words is enough. There's no right or wrong answer." style="min-height:110px;"></textarea>
+      <label for="message">What's on your mind?</label>
+      <textarea id="message" name="message" required placeholder="No need to explain everything. A few words is enough."></textarea>
     </div>
 
     <div class="form-group">
-      <label for="dc-hoping">What are you hoping a conversation might help with? <span class="form-optional">optional</span></label>
-      <textarea id="dc-hoping" name="hoping_for" placeholder="Whatever feels relevant to share." style="min-height:90px;"></textarea>
+      <label for="how-select">How did you hear about Janine?</label>
+      <select id="how-select" name="how" onchange="handleHowChange(this)">
+        <option value="" disabled selected>Please select…</option>
+        <optgroup label="Online">
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="Google / Search">Google / Search</option>
+          <option value="Instagram">Instagram</option>
+          <option value="Facebook">Facebook</option>
+        </optgroup>
+        <optgroup label="Professional referral">
+          <option value="Family lawyer referral">Family lawyer</option>
+          <option value="Mediator referral">Mediator</option>
+          <option value="Financial advisor referral">Financial advisor</option>
+          <option value="Therapist / counsellor referral">Therapist / counsellor</option>
+        </optgroup>
+        <optgroup label="Personal">
+          <option value="Friend recommendation">Friend recommendation</option>
+          <option value="Family recommendation">Family recommendation</option>
+        </optgroup>
+        <option value="other">Other / tell me more…</option>
+      </select>
     </div>
 
-    <div class="form-group">
-      <label>Preferred days for a call <span class="form-optional">tick all that apply</span></label>
-      <div class="checkbox-group">
-        <label class="checkbox-label"><input type="checkbox" name="days" value="Monday"> Monday</label>
-        <label class="checkbox-label"><input type="checkbox" name="days" value="Tuesday"> Tuesday</label>
-        <label class="checkbox-label"><input type="checkbox" name="days" value="Wednesday"> Wednesday</label>
-        <label class="checkbox-label"><input type="checkbox" name="days" value="Thursday"> Thursday</label>
-        <label class="checkbox-label"><input type="checkbox" name="days" value="Friday"> Friday</label>
-        <label class="checkbox-label"><input type="checkbox" name="days" value="Weekend"> Weekend</label>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label>Preferred times <span class="form-optional">tick all that apply</span></label>
-      <div class="checkbox-group">
-        <label class="checkbox-label"><input type="checkbox" name="times" value="Morning (8am–12pm)"> Morning &nbsp;<span class="form-optional">8am–12pm</span></label>
-        <label class="checkbox-label"><input type="checkbox" name="times" value="Afternoon (12pm–5pm)"> Afternoon &nbsp;<span class="form-optional">12pm–5pm</span></label>
-        <label class="checkbox-label"><input type="checkbox" name="times" value="Evening (5pm–8pm)"> Evening &nbsp;<span class="form-optional">5pm–8pm</span></label>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="dc-anything">Anything else you'd like me to know? <span class="form-optional">optional</span></label>
-      <textarea id="dc-anything" name="anything_else" placeholder="Completely optional." style="min-height:80px;"></textarea>
+    <div class="form-group" id="how-other-group" style="display:none;">
+      <label for="how-other">Tell us more</label>
+      <input type="text" id="how-other" name="how-detail" placeholder="Name of person who recommended you, or where you found us">
     </div>
 
     <div class="form-submit">
-      <button type="submit" class="btn-cta">Send my enquiry</button>
+      <button type="submit" class="btn-cta">Send message</button>
     </div>
-    <p class="form-note">I'll review your enquiry and come back to you within 48 hours. If I feel we're a good fit, I'll suggest some times for a call.</p>
+    <p class="form-note">Your message comes straight to Janine. No third parties, no sales process.</p>
   </form>
+
+  <script>
+  function handleHowChange(sel) {
+    var otherGroup = document.getElementById('how-other-group');
+    var otherInput = document.getElementById('how-other');
+    if (sel.value === 'other') {
+      otherGroup.style.display = '';
+      otherInput.setAttribute('required', '');
+    } else {
+      otherGroup.style.display = 'none';
+      otherInput.removeAttribute('required');
+    }
+  }
+  </script>
+</div>
+
+<div style="padding:0 18px;"><div class="gold-rule"></div></div>
+
+<div class="contact-other-methods">
+  <p class="contact-methods-label">Or reach out directly</p>
+  <div class="contact-methods-grid">
+    <div class="contact-method-item">
+      <p class="cm-label">WhatsApp</p>
+      <p class="cm-value"><a href="https://wa.me/447747897113" target="_blank" rel="noopener">Message me directly</a></p>
+    </div>
+    <div class="contact-method-item">
+      <p class="cm-label">Phone</p>
+      <p class="cm-value"><a href="tel:+447747897113">+44 7747 897113</a></p>
+    </div>
+    <div class="contact-method-item">
+      <p class="cm-label">LinkedIn</p>
+      <p class="cm-value"><a href="https://linkedin.com/in/janineisaacs" target="_blank" rel="noopener">linkedin.com/in/janineisaacs</a></p>
+    </div>
+  </div>
+</div>
+
+<div style="padding:0 18px 0;">
+  <div class="newsletter-card">
+    <p class="nl-label">Monthly Newsletter</p>
+    <h3>Stay connected</h3>
+    <p>A monthly letter on what it really feels like to navigate this, the moments that shift things, and the quiet work of finding your way back to yourself. No noise. Just something worth reading.</p>
+    <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="nl-bot">
+      <input type="hidden" name="form-name" value="newsletter">
+      <p style="display:none;"><input name="nl-bot"></p>
+      <div class="newsletter-input-row">
+        <input type="email" name="email" required placeholder="Your email address" autocomplete="email" class="nl-email-input">
+        <button type="submit" class="btn-cta nl-submit">Subscribe</button>
+      </div>
+      <p class="nl-consent">No spam, ever. Unsubscribe any time.</p>
+    </form>
+  </div>
+
+<div class="contact-closing">
+  <p>There's a quiet voice in you that knows life can be more. If you're willing to listen, you know where I am. No pressure, just an open door.</p>
 </div>
 </main>
 <div class="global-contact-footer">
@@ -132,10 +184,12 @@ function toggleNav() {
   if (!nav || !btn) return;
   var isOpen = nav.classList.contains('open');
   if (isOpen) {
-    nav.classList.remove('open'); btn.classList.remove('open');
+    nav.classList.remove('open');
+    btn.classList.remove('open');
     btn.setAttribute('aria-expanded', 'false');
   } else {
-    nav.classList.add('open'); btn.classList.add('open');
+    nav.classList.add('open');
+    btn.classList.add('open');
     btn.setAttribute('aria-expanded', 'true');
   }
 }
@@ -153,3 +207,4 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
