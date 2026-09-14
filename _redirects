@@ -1,0 +1,12 @@
+# v1 pages folded into the single v2 page. 301s keep old links, bookmarks and search results working.
+/about                          /#about                       301
+/the-woman-behind-the-work      /#about                       301
+/philosophy                     /#what-i-do                   301
+/this-is-for-you                /#the-part-nobody-is-looking-after 301
+/work-with-me                   /#for-professionals           301
+/testimonials                   /#for-professionals           301
+/contact                        /#contact                     301
+/reflections                    /                             301
+/contact.html                   /#contact                     301
+/discovery-call.html            /discovery-call               301
+/thank-you.html                 /thank-you                    301

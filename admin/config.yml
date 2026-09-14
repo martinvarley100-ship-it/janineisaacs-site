@@ -3,10 +3,10 @@ backend:
   branch: main
   # When DNS moves to janineisaacs.com, remove the site_url line below
   # and Netlify will detect the URL automatically
-  site_url: https://janineisaacsdraft.netlify.app
+  site_url: https://janineisaacs.com
 
-site_url: https://janineisaacsdraft.netlify.app
-display_url: https://janineisaacsdraft.netlify.app
+site_url: https://janineisaacs.com
+display_url: https://janineisaacs.com
 
 media_folder: assets
 public_folder: /assets
