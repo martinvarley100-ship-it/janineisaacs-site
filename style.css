@@ -88,9 +88,7 @@ html.nav-open { overflow: hidden; }
 .hero { padding-block: clamp(88px, 18vh, 200px) clamp(72px, 14vh, 170px); }
 
 section.block { padding-block: 22px 78px; }
-section.block .num-rule { display: flex; align-items: center; gap: 14px; margin-bottom: 42px; }
-section.block .num-rule .num { font-size: 0.62rem; letter-spacing: 0.12em; color: var(--muted); font-weight: 400; }
-section.block .num-rule::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+section.block .num-rule { height: 1px; background: var(--rule); margin-bottom: 42px; }
 
 .pull { margin-top: 2.6em; }
 
