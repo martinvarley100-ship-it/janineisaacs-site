@@ -52,12 +52,38 @@ h2 { font-size: clamp(1.7rem, 4vw, 2.35rem); max-width: 22ch; margin-bottom: 1.1
 /* ---------- layout ---------- */
 .wrap { width: 100%; max-width: 980px; margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
 
-.site-header { padding-block: 26px 0; }
+.site-header { padding-block: 26px 0; position: relative; z-index: 5; }
+.header-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
 .brand { text-decoration: none; display: inline-block; }
 .brand .name { font-family: var(--serif); font-size: 1.05rem; letter-spacing: 0.14em; color: var(--ink); line-height: 1.2; }
 .brand .strap { display: block; margin-top: 4px; }
 .brand .where { display: block; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--muted); margin-top: 3px; }
-.site-header:hover .name { color: var(--band); }
+.brand:hover .name { color: var(--band); }
+
+/* section menu */
+.menu-btn { display: inline-flex; align-items: center; gap: 10px; background: none; border: 0; padding: 6px 0 6px 12px; min-height: 44px; cursor: pointer; font: inherit; color: var(--ink); }
+.menu-btn .menu-word { font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500; }
+.menu-lines { display: inline-flex; flex-direction: column; gap: 5px; width: 20px; }
+.menu-lines span { display: block; height: 1px; background: var(--ink); transition: transform .2s ease, opacity .2s ease; }
+.menu-btn[aria-expanded="true"] .menu-lines span:first-child { transform: translateY(3px) rotate(45deg); }
+.menu-btn[aria-expanded="true"] .menu-lines span:last-child { transform: translateY(-3px) rotate(-45deg); }
+.site-nav { display: none; }
+.site-nav a { text-decoration: none; color: var(--ink); }
+.site-nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.site-nav.open {
+  display: flex; flex-direction: column; gap: 4px;
+  position: absolute; left: 0; right: 0; top: 100%;
+  background: var(--bg); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  padding: 18px var(--gutter) 22px;
+}
+.site-nav.open a { font-family: var(--serif); font-size: 1.35rem; line-height: 1.3; padding: 8px 0; }
+@media (min-width: 760px) {
+  .menu-btn { display: none; }
+  .site-nav, .site-nav.open { display: flex; position: static; flex-direction: row; gap: 26px; border: 0; padding: 4px 0 0; background: none; }
+  .site-nav a, .site-nav.open a { font-family: var(--sans); font-size: 0.64rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; padding: 6px 0; }
+}
+html.nav-open { overflow: hidden; }
+@media (min-width: 760px) { html.nav-open { overflow: auto; } }
 
 .hero { padding-block: clamp(88px, 18vh, 200px) clamp(72px, 14vh, 170px); }
 

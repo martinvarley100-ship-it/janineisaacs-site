@@ -24,12 +24,23 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
-  <div class="wrap">
+  <div class="wrap header-row">
     <a href="/" class="brand" aria-label="Janine Isaacs, home">
       <span class="name">janine isaacs</span>
       <span class="eyebrow strap">An independent perspective.</span>
       <span class="where">London, Manchester, Miami.</span>
     </a>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-controls="site-nav" aria-expanded="false" onclick="toggleNav()">
+      <span class="menu-lines" aria-hidden="true"><span></span><span></span></span>
+      <span class="menu-word">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Sections">
+      <a href="/#the-part-nobody-is-looking-after">The situation</a>
+      <a href="/#what-i-do">What I do</a>
+      <a href="/#about">About</a>
+      <a href="/#for-professionals">For advisers</a>
+      <a href="/#contact">Contact</a>
+    </nav>
   </div>
 </header>
 
@@ -43,5 +54,20 @@
     </div>
   </section>
 </main>
+<script>
+  function toggleNav(force) {
+    var nav = document.getElementById('site-nav');
+    var btn = document.querySelector('.menu-btn');
+    var open = typeof force === 'boolean' ? force : !nav.classList.contains('open');
+    nav.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.documentElement.classList.toggle('nav-open', open);
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    var links = document.querySelectorAll('.site-nav a');
+    for (var i = 0; i < links.length; i++) links[i].addEventListener('click', function () { toggleNav(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') toggleNav(false); });
+  });
+</script>
 </body>
 </html>
