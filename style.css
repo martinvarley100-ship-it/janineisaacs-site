@@ -85,22 +85,30 @@ h2 { font-size: clamp(1.7rem, 4vw, 2.35rem); max-width: 22ch; margin-bottom: 1.1
 html.nav-open { overflow: hidden; }
 @media (min-width: 760px) { html.nav-open { overflow: auto; } }
 
-.hero { padding-block: clamp(88px, 18vh, 200px) clamp(72px, 14vh, 170px); }
+.hero { padding-block: clamp(48px, 9vh, 104px) clamp(40px, 7vh, 72px); }
+section[id] { scroll-margin-top: 24px; }
 
-section.block { padding-block: 22px 78px; }
-section.block .num-rule { height: 1px; background: var(--rule); margin-bottom: 42px; }
+section.block { padding-block: 0 clamp(48px, 7vw, 72px); }
+section.block .num-rule { height: 1px; background: var(--rule); margin-bottom: clamp(28px, 4vw, 40px); }
+/* editorial split: heading column left, reading column right (desktop) */
+.split { display: grid; grid-template-columns: 1fr; gap: 0; }
+@media (min-width: 820px) {
+  .split { grid-template-columns: 5fr 7fr; gap: 56px; align-items: start; }
+  .split .lead { position: sticky; top: 28px; }
+  .split .lead h2 { margin-bottom: 0; max-width: 16ch; }
+}
 
-.pull { margin-top: 2.6em; }
+.pull { margin-top: 2em; }
 
 /* three columns */
-.cols { display: grid; grid-template-columns: 1fr; gap: 34px; margin-top: 64px; }
+.cols { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: clamp(40px, 5vw, 56px); }
 .col { border-top: 1px solid var(--rule); padding-top: 14px; }
 .col .eyebrow { color: var(--muted); font-size: 0.58rem; display: block; margin-bottom: 12px; }
 .col p { font-size: 0.85rem; line-height: 1.7; }
 @media (min-width: 640px) { .cols { grid-template-columns: repeat(3, 1fr); gap: 26px; } }
 
 /* dark band */
-.band { background: var(--band); color: var(--band-text); padding-block: clamp(56px, 9vw, 96px); }
+.band { background: var(--band); color: var(--band-text); padding-block: clamp(52px, 7vw, 84px); margin-bottom: clamp(48px, 7vw, 72px); }
 .band h2, .band .display { color: var(--band-text); }
 .band .display { margin-bottom: 1.1em; }
 .band a { color: var(--band-text); }
@@ -112,10 +120,10 @@ section.block .num-rule { height: 1px; background: var(--rule); margin-bottom: 4
 .about h2 { max-width: 16ch; }
 @media (min-width: 720px) {
   .about { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; }
-  .about .portrait { order: 2; justify-self: end; }
+  .about .portrait { order: 2; justify-self: end; position: sticky; top: 28px; }
   .about .text { order: 1; }
 }
-.creds { margin-top: 56px; max-width: var(--measure); }
+.creds { margin-top: 44px; max-width: var(--measure); }
 .creds p { border-top: 1px solid var(--rule); padding-top: 12px; margin: 0 0 22px; font-size: 0.8rem; line-height: 1.65; color: var(--muted); }
 
 /* numbered list */
@@ -124,7 +132,7 @@ section.block .num-rule { height: 1px; background: var(--rule); margin-bottom: 4
 .steps li .n { font-size: 0.62rem; letter-spacing: 0.1em; color: var(--muted); padding-top: 0.35em; }
 
 /* testimonials */
-.quotes { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 64px; }
+.quotes { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: clamp(40px, 5vw, 56px); padding-top: clamp(28px, 4vw, 40px); border-top: 1px solid var(--rule); }
 .quote { margin: 0; }
 .quote p { font-style: italic; font-size: 0.92rem; line-height: 1.65; color: var(--ink); }
 .quote footer { margin-top: 10px; font-style: normal; }
@@ -132,16 +140,17 @@ section.block .num-rule { height: 1px; background: var(--rule); margin-bottom: 4
 @media (min-width: 640px) { .quotes { grid-template-columns: repeat(3, 1fr); gap: 26px; } }
 
 /* closing / contact */
-.closing { background: var(--bg-soft); padding-block: clamp(64px, 9vw, 104px) 0; }
+.closing { background: var(--bg-soft); padding-block: clamp(52px, 7vw, 84px) 0; }
 .closing .display { max-width: 26ch; margin-bottom: 1.2em; }
-.closing .contact-lines { margin-top: 40px; font-size: 0.95rem; }
+.closing .contact-lines { margin-top: 32px; font-size: 0.95rem; }
+@media (min-width: 820px) { .closing .contact-lines { margin-top: 6px; } .closing-split .lead { position: static; } }
 .closing .contact-lines a { font-weight: 400; }
 .closing .contact-lines .tel { display: block; margin-top: 4px; text-decoration: none; }
 .closing .where { margin-top: 28px; }
-.closing .foot { margin-top: 72px; padding-block: 22px 28px; border-top: 1px solid var(--rule); font-size: 0.72rem; color: var(--muted); }
+.closing .foot { margin-top: 56px; padding-block: 22px 28px; border-top: 1px solid var(--rule); font-size: 0.72rem; color: var(--muted); }
 
 /* ---------- forms (Netlify) ---------- */
-.contact-form-wrap { margin-top: 56px; padding-top: 42px; border-top: 1px solid var(--rule); max-width: var(--measure); }
+.contact-form-wrap { margin-top: 44px; padding-top: 42px; border-top: 1px solid var(--rule); max-width: var(--measure); }
 .contact-form-wrap h3 { font-size: 1.35rem; margin-bottom: 0.4em; }
 .contact-form-wrap .form-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.8em; }
 .form-group { margin-bottom: 20px; }
