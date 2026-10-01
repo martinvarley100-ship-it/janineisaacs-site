@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://janineisaacs.com/</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://janineisaacs.com/assets/janine-portrait.jpg</image:loc><image:title>Janine Isaacs</image:title></image:image>
   </url>
   <url>
     <loc>https://janineisaacs.com/discovery-call</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -45,7 +45,6 @@
       "name": "Janine Isaacs",
       "url": "https://janineisaacs.com/",
       "image": "https://janineisaacs.com/assets/janine-portrait.jpg",
-      "email": "janine@janineisaacs.com",
       "telephone": "+44 7747 897113",
       "jobTitle": "Independent perspective for personal decisions inside legal and financial processes",
       "description": "Janine Isaacs spent twelve years as a medical negligence solicitor, latterly as a partner at one of Manchester's most respected firms, in practices recognised by Legal 500 and Chambers and Partners, followed by twenty years in FCA-regulated businesses and property investment and development. She now offers a confidential, independent hour to people facing decisions whose consequences are both financial and personal, working alongside their solicitors and advisers rather than instead of them.",
@@ -76,8 +75,15 @@
       "@id": "https://janineisaacs.com/#service",
       "name": "Janine Isaacs. An Independent Perspective",
       "url": "https://janineisaacs.com/",
-      "email": "janine@janineisaacs.com",
       "telephone": "+44 7747 897113",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+44 7747 897113",
+        "contactType": "enquiries",
+        "areaServed": ["GB", "US"],
+        "availableLanguage": "English",
+        "url": "https://janineisaacs.com/#contact"
+      },
       "image": "https://janineisaacs.com/assets/og-image.jpg",
       "founder": {"@id": "https://janineisaacs.com/#person"},
       "provider": {"@id": "https://janineisaacs.com/#person"},
@@ -304,14 +310,14 @@
       </div>
       <div class="body">
       <div class="contact-lines">
-        <a href="mailto:janine@janineisaacs.com">janine@janineisaacs.com</a>
-        <a class="tel" href="tel:+447747897113">+44 7747 897113</a>
+        <!-- Email is assembled in the browser so address harvesters reading the raw HTML do not see it. -->
+        <a class="js-email" href="#contact-form" data-u="janine" data-d="janineisaacs.com">Email me</a>
       </div>
       <p class="small where">In person in London, Manchester and Miami. Elsewhere by arrangement.</p>
 
       <!-- Netlify form: name and field names are unchanged from v1 so the existing
            "Contact Request" notifications keep firing. Do not rename. -->
-      <div class="contact-form-wrap">
+      <div class="contact-form-wrap" id="contact-form">
         <h3>Send me a message</h3>
         <p class="form-sub">I'll come back to you within 24 hours, usually sooner.</p>
         <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
@@ -398,6 +404,12 @@
     document.documentElement.classList.toggle('nav-open', open);
   }
   document.addEventListener('DOMContentLoaded', function () {
+    var em = document.querySelectorAll('.js-email');
+    for (var k = 0; k < em.length; k++) {
+      var a = em[k].getAttribute('data-u') + '@' + em[k].getAttribute('data-d');
+      em[k].setAttribute('href', 'mailto:' + a);
+      em[k].textContent = a;
+    }
     var links = document.querySelectorAll('.site-nav a');
     for (var i = 0; i < links.length; i++) links[i].addEventListener('click', function () { toggleNav(false); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') toggleNav(false); });
