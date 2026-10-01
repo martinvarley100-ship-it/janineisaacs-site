@@ -48,7 +48,9 @@
       "telephone": "+44 7747 897113",
       "jobTitle": "Independent perspective for personal decisions inside legal and financial processes",
       "description": "Janine Isaacs spent twelve years as a medical negligence solicitor, latterly as a partner at one of Manchester's most respected firms, in practices recognised by Legal 500 and Chambers and Partners, followed by twenty years in FCA-regulated businesses and property investment and development. She now offers a confidential, independent hour to people facing decisions whose consequences are both financial and personal, working alongside their solicitors and advisers rather than instead of them.",
-      "sameAs": ["https://www.linkedin.com/in/janineisaacs"],
+      "sameAs": [
+        "https://www.linkedin.com/in/janineisaacs"
+      ],
       "hasCredential": {
         "@type": "EducationalOccupationalCredential",
         "name": "Solicitor (former), medical negligence, latterly partner; Legal 500 and Chambers and Partners recognised firms"
@@ -65,9 +67,34 @@
         "Property investment and development"
       ],
       "workLocation": [
-        {"@type": "Place", "name": "London", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}},
-        {"@type": "Place", "name": "Manchester", "address": {"@type": "PostalAddress", "addressLocality": "Manchester", "addressCountry": "GB"}},
-        {"@type": "Place", "name": "Miami", "address": {"@type": "PostalAddress", "addressLocality": "Miami", "addressRegion": "FL", "addressCountry": "US"}}
+        {
+          "@type": "Place",
+          "name": "London",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "London",
+            "addressCountry": "GB"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Manchester",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Manchester",
+            "addressCountry": "GB"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Miami",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Miami",
+            "addressRegion": "FL",
+            "addressCountry": "US"
+          }
+        }
       ]
     },
     {
@@ -80,42 +107,127 @@
         "@type": "ContactPoint",
         "telephone": "+44 7747 897113",
         "contactType": "enquiries",
-        "areaServed": ["GB", "US"],
+        "areaServed": [
+          "GB",
+          "US"
+        ],
         "availableLanguage": "English",
         "url": "https://janineisaacs.com/#contact"
       },
       "image": "https://janineisaacs.com/assets/og-image.jpg",
-      "founder": {"@id": "https://janineisaacs.com/#person"},
-      "provider": {"@id": "https://janineisaacs.com/#person"},
+      "founder": {
+        "@id": "https://janineisaacs.com/#person"
+      },
       "slogan": "Some decisions are too important to make in the noise.",
       "description": "A confidential hour with someone independent, who understands the process you are in and has no interest in the outcome beyond yours. Clearer ground before the next meeting, the next letter, the next conversation you have been putting off. Not legal advice. Not therapy. Not mediation, and not a message carried between parties.",
-      "serviceType": "Independent perspective for personal decisions within legal and financial processes",
       "areaServed": [
-        {"@type": "City", "name": "London"},
-        {"@type": "City", "name": "Manchester"},
-        {"@type": "City", "name": "Miami"}
+        {
+          "@type": "City",
+          "name": "London"
+        },
+        {
+          "@type": "City",
+          "name": "Manchester"
+        },
+        {
+          "@type": "City",
+          "name": "Miami"
+        }
       ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Where this applies",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Succession and inheritance"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "The sale or handover of a business"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ageing parents and the decisions that come with them"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Family estates"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Divorce and separation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Any decision whose consequences are both financial and personal"
+            }
+          }
+        ]
+      },
+      "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@id": "https://janineisaacs.com/#offer"
+        }
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://janineisaacs.com/#offer",
+      "name": "An independent perspective for personal decisions inside a legal or financial process",
+      "serviceType": "Independent perspective for personal decisions within legal and financial processes",
+      "provider": {
+        "@id": "https://janineisaacs.com/#person"
+      },
       "availableChannel": {
         "@type": "ServiceChannel",
         "name": "In person in London, Manchester and Miami. Elsewhere by arrangement.",
         "serviceUrl": "https://janineisaacs.com/#contact"
       },
       "audience": [
-        {"@type": "Audience", "audienceType": "Private clients facing succession, inheritance, business sale or handover, ageing parents, family estates, divorce and separation"},
-        {"@type": "Audience", "audienceType": "Solicitors and professional advisers with clients who understand the advice but are struggling to act on it"}
+        {
+          "@type": "Audience",
+          "audienceType": "Private clients facing succession, inheritance, business sale or handover, ageing parents, family estates, divorce and separation"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "Solicitors and professional advisers with clients who understand the advice but are struggling to act on it"
+        }
       ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Where this applies",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Succession and inheritance"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "The sale or handover of a business"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Ageing parents and the decisions that come with them"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Family estates"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Divorce and separation"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Any decision whose consequences are both financial and personal"}}
-        ]
-      }
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "London"
+        },
+        {
+          "@type": "City",
+          "name": "Manchester"
+        },
+        {
+          "@type": "City",
+          "name": "Miami"
+        }
+      ],
+      "description": "A confidential hour with someone independent, who understands the process you are in and has no interest in the outcome beyond yours. Clearer ground before the next meeting, the next letter, the next conversation you have been putting off. Not legal advice. Not therapy. Not mediation, and not a message carried between parties.",
+      "url": "https://janineisaacs.com/"
     },
     {
       "@type": "WebSite",
@@ -123,15 +235,21 @@
       "url": "https://janineisaacs.com/",
       "name": "Janine Isaacs",
       "inLanguage": "en-GB",
-      "publisher": {"@id": "https://janineisaacs.com/#person"}
+      "publisher": {
+        "@id": "https://janineisaacs.com/#person"
+      }
     },
     {
       "@type": "WebPage",
       "@id": "https://janineisaacs.com/#webpage",
       "url": "https://janineisaacs.com/",
       "name": "Janine Isaacs. An Independent Perspective",
-      "isPartOf": {"@id": "https://janineisaacs.com/#website"},
-      "about": {"@id": "https://janineisaacs.com/#person"},
+      "isPartOf": {
+        "@id": "https://janineisaacs.com/#website"
+      },
+      "about": {
+        "@id": "https://janineisaacs.com/#person"
+      },
       "primaryImageOfPage": "https://janineisaacs.com/assets/janine-portrait.jpg",
       "inLanguage": "en-GB"
     }
