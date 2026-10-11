@@ -272,6 +272,7 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<div class="header-shell">
 <header class="site-header">
   <div class="wrap header-row">
     <a href="/" class="brand" aria-label="Janine Isaacs, home">
@@ -292,6 +293,7 @@
     </nav>
   </div>
 </header>
+</div>
 
 <main id="main">
 
@@ -532,6 +534,55 @@
     var links = document.querySelectorAll('.site-nav a');
     for (var i = 0; i < links.length; i++) links[i].addEventListener('click', function () { toggleNav(false); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') toggleNav(false); });
+
+    // hide-and-return header
+    var shell = document.querySelector('.header-shell');
+    var head = document.querySelector('.site-header');
+    var root = document.documentElement;
+    var headH = 0, lastY = window.pageYOffset, suppressUntil = 0, ticking = false;
+    function measure() {
+      if (!head.classList.contains('is-fixed')) {
+        shell.style.minHeight = '';
+        headH = head.offsetHeight;
+        shell.style.minHeight = headH + 'px';
+      }
+    }
+    function setShown(on) {
+      head.classList.toggle('is-shown', on);
+      root.classList.toggle('head-shown', on);
+      if (on) root.style.setProperty('--head-h', head.offsetHeight + 'px');
+    }
+    function update() {
+      ticking = false;
+      var y = window.pageYOffset;
+      if (y <= headH) {
+        if (head.classList.contains('is-fixed')) {
+          head.classList.add('no-anim');
+          head.classList.remove('is-fixed');
+          setShown(false);
+          void head.offsetHeight;
+          head.classList.remove('no-anim');
+        }
+      } else {
+        if (!head.classList.contains('is-fixed')) {
+          head.classList.add('no-anim', 'is-fixed');
+          void head.offsetHeight;
+          head.classList.remove('no-anim');
+        }
+        if (root.classList.contains('nav-open')) setShown(true);
+        else if (Date.now() < suppressUntil) setShown(false);
+        else if (y < lastY - 4) setShown(true);
+        else if (y > lastY + 4) setShown(false);
+      }
+      lastY = y;
+    }
+    measure();
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener('resize', function () { measure(); update(); });
+    var jump = document.querySelectorAll('a[href^="#"]');
+    for (var j = 0; j < jump.length; j++) jump[j].addEventListener('click', function () { suppressUntil = Date.now() + 1200; setShown(false); });
+    head.addEventListener('focusin', function () { if (head.classList.contains('is-fixed')) setShown(true); });
+    update();
   });
 </script>
 </body>

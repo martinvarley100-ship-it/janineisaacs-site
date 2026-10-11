@@ -85,6 +85,27 @@ h2 { font-size: clamp(1.7rem, 4vw, 2.35rem); max-width: 22ch; margin-bottom: 1.1
 html.nav-open { overflow: hidden; }
 @media (min-width: 760px) { html.nav-open { overflow: auto; } }
 
+/* hide-and-return header: once scrolled past the top, a slim bar slides away
+   on scroll down and returns on scroll up */
+.header-shell { position: relative; z-index: 20; }
+.site-header.is-fixed {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  background: var(--bg); border-bottom: 1px solid var(--rule);
+  padding-block: 8px;
+  transform: translateY(-101%); transition: transform .3s ease;
+}
+.site-header.is-fixed.is-shown { transform: none; }
+.site-header.no-anim { transition: none !important; }
+.site-header.is-fixed .header-row { align-items: center; }
+.site-header.is-fixed .brand .strap,
+.site-header.is-fixed .brand .where { display: none; }
+@media (min-width: 760px) { .site-header.is-fixed .site-nav { padding-top: 0; } }
+.split .lead, .about .portrait { transition: top .3s ease; }
+html.head-shown .split .lead, html.head-shown .about .portrait { top: calc(var(--head-h, 60px) + 24px) !important; }
+@media (prefers-reduced-motion: reduce) {
+  .site-header.is-fixed, .split .lead, .about .portrait { transition: none; }
+}
+
 .hero { padding-block: clamp(48px, 9vh, 104px) clamp(40px, 7vh, 72px); }
 section[id] { scroll-margin-top: 24px; }
 
