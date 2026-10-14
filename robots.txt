@@ -3,6 +3,7 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /thank-you
+Disallow: /dont-count-me
 
 # AI and answer-engine crawlers, explicitly allowed
 User-agent: GPTBot
