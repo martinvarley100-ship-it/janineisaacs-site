@@ -284,6 +284,8 @@
     window.location.replace('/admin/' + window.location.hash);
   }
 </script>
+<!-- Umami: cookieless visitor statistics (no personal data, no cookie banner needed) -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="e8a78319-fbbd-46c7-8f78-75d34440ef9e"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -448,7 +450,7 @@
       <div class="body">
       <div class="contact-lines">
         <!-- Email address is assembled only on click (see script). -->
-        <a class="js-email" href="#contact-form" data-u="janine" data-d="janineisaacs.com">Email Janine</a>
+        <a class="js-email" data-umami-event="Email Janine clicked" href="#contact-form" data-u="janine" data-d="janineisaacs.com">Email Janine</a>
       </div>
       <p class="small where">In person in Manchester and London. Elsewhere by arrangement.</p>
 
