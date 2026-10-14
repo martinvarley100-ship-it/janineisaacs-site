@@ -447,8 +447,8 @@
       </div>
       <div class="body">
       <div class="contact-lines">
-        <!-- Email is assembled in the browser so address harvesters reading the raw HTML do not see it. -->
-        <a class="js-email" href="#contact-form" data-u="janine" data-d="janineisaacs.com">Email me</a>
+        <!-- Email address is assembled only on click (see script). -->
+        <a class="js-email" href="#contact-form" data-u="janine" data-d="janineisaacs.com">Email Janine</a>
       </div>
       <p class="small where">In person in Manchester and London. Elsewhere by arrangement.</p>
 
@@ -542,10 +542,13 @@
   }
   document.addEventListener('DOMContentLoaded', function () {
     var em = document.querySelectorAll('.js-email');
+    // The address is never written into the page. It is put together only when someone clicks,
+    // so scrapers (including ones that run the page's scripts) never see it.
     for (var k = 0; k < em.length; k++) {
-      var a = em[k].getAttribute('data-u') + '@' + em[k].getAttribute('data-d');
-      em[k].setAttribute('href', 'mailto:' + a);
-      em[k].textContent = a;
+      em[k].addEventListener('click', function (e) {
+        e.preventDefault();
+        window.location.href = 'mailto:' + this.getAttribute('data-u') + '@' + this.getAttribute('data-d');
+      });
     }
     var links = document.querySelectorAll('.site-nav a');
     for (var i = 0; i < links.length; i++) links[i].addEventListener('click', function () { toggleNav(false); });
